@@ -3,55 +3,33 @@
 ## Getting Started
 
 ```bash
-# On macOS and Linux.
-curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# On Windows.
-powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-
-# With pip.
-pip install uv
-
-# With pipx.
-pipx install uv
-
-# With Homebrew.
-brew install uv
-
-# With Pacman.
-pacman -S uv
+$ python3.12 -m venv .venv
+$ source .venv/bin/activate
+$ poetry install
 ```
 
 ```bash
-uv venv  # Create a virtual environment at .venv.
+$ uvicorn app.main:app --host 0.0.0.0 --port 8080 --reload
 ```
 
-```bash
-# On macOS and Linux.
-source .venv/bin/activate
+## 📱 CONTACT INFO.
 
-# On Windows.
-.venv\Scripts\activate
-```
+> **Hugo ChunHo Lin**
+> 
+> <aside>
+>   📩 E-mail: <a href="mailto:hugo970217@gmail.com">hugo970217@gmail.com</a>
+> <br>
+>   🧳 Linkedin: <a href="https://www.linkedin.com/in/1chooo/">Hugo ChunHo Lin</a>
+> <br>
+>   👨🏻‍💻 GitHub: <a href="https://github.com/1chooo">1chooo</a>
+>    
+> </aside>
 
-```bash
-uv pip compile requirements.in -o requirements.txt    # Read a requirements.in file.
-uv pip compile pyproject.toml -o requirements.txt     # Read a pyproject.toml file.
-uv pip compile setup.py -o requirements.txt           # Read a setup.py file.
-echo flask | uv pip compile - -o requirements.txt     # Read from stdin.
-uv pip freeze | uv pip compile - -o requirements.txt  # Lock the current environment.
-```
 
-https://github.com/astral-sh/uv
+## 🪪 LICENSE
 
-```bash
-uv pip install gradio
-uv pip install "uvicorn[standard]"
-uv pip install boto3
-uv pip install python-dotenv
-uv pip install line-bot-sdk
-```
+Released under [MIT](./LICENSE) by [@1chooo](https://1chooo.com)
 
-```bash
-uv pip sync requirements.txt  # Install from a requirements.txt file.
-```
+This software can be modified and reused without restriction. The original license must be included with any copies of this software. If a significant portion of the source code is used, please provide a link back to this repository.
+
+Made with ❤️ by [@1chooo](https://1chooo.com)
