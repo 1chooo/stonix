@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-function RootLayout({ children }: { readonly children: React.ReactNode; }) {
+function HomeLayout({ children }: { readonly children: React.ReactNode; }) {
   return (
     <>
       <Header />
@@ -25,4 +25,4 @@ function RootLayout({ children }: { readonly children: React.ReactNode; }) {
   );
 };
 
-export default RootLayout;
+export default HomeLayout;
