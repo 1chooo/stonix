@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link"
-import { cva, type VariantProps } from "class-variance-authority"
+import { cva } from "class-variance-authority"
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { HeartIcon, MarkGithubIcon, ArrowUpRightIcon } from "@primer/octicons-react";
+import { ArrowUpRightIcon } from "@primer/octicons-react";
 
 const containerVariants = {
   initial: {
@@ -152,19 +152,12 @@ function Hero() {
           Modern Stock Tracking Application for Your Portfolio
         </motion.h2>
       </motion.div>
-      <p className="leading-6 text-muted-foreground">
+      <p className="leading-6 text-muted-foreground text-center max-w-2xl mx-auto">
         An open-source stock tracking application that helps you keep track of your portfolio and make better investment decisions.
       </p>
       <div className="flex gap-4 justify-center align-middle">
-        <Link href="https://github.com/1chooo/trade-tracker" className={buttonVariants()}>
-          <MarkGithubIcon className="mr-2 h-5 w-5" />
-          <div className="font-semibold">GitHub</div>
-        </Link>
-        <Link
-          href="#get-started"
-          className={buttonVariants({ variant: "outline" })}
-        >
-          Get Started
+        <Link href="#get-started" className={buttonVariants()}>
+          Start for free
           <ArrowUpRightIcon className="ml-2 h-5 w-5" />
         </Link>
       </div>

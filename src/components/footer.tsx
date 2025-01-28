@@ -15,8 +15,8 @@ const Footer = () => {
           src="/favicon.ico"
           alt="Logo of Refinaid"
           quality={100}
-          width={40}
-          height={40}
+          width={48}
+          height={48}
           draggable={false}
         />
         <span className="text-xs text-[#00000070] dark:text-[#ffffff70]">

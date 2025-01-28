@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { LayoutGrid, LogOut, User, CreditCard, MessageCircle } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -86,6 +85,15 @@ export function UserNav() {
         <DropdownMenuItem className="hover:cursor-pointer" onClick={() => { }}>
           <LogOut className="w-4 h-4 mr-3 text-muted-foreground" />
           Sign out
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem className="p-2 focus:bg-transparent">
+          <Link
+            href="/pricing"
+            className="flex w-full items-center justify-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
+          >
+            Pricing
+          </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
