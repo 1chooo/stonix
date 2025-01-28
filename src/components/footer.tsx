@@ -11,16 +11,16 @@ const Footer = () => {
     >
       <div className="flex flex-col items-center gap-4 lg:ml-32 lg:items-start">
         <Image
-          className="flex items-center gap-2 text-xl font-bold dark:invert"
-          src="/logo.png"
+          className="flex items-center gap-2 text-xl font-bold"
+          src="/favicon.ico"
           alt="Logo of Refinaid"
           quality={100}
-          width={140}
-          height={140}
+          width={40}
+          height={40}
           draggable={false}
         />
         <span className="text-xs text-[#00000070] dark:text-[#ffffff70]">
-          Copyright © {new Date().getFullYear()} Refinaid
+          Copyright © 2024-{new Date().getFullYear()} 1chooo
         </span>
         <div className="flex items-center justify-center gap-3">
           <Link
@@ -86,7 +86,7 @@ const Footer = () => {
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
           >Terms</Link>
           <Link
-            href="https://github.com/1chooo/refinaid/blob/main/LICENSE"
+            href="https://github.com/1chooo/trade-tracker/blob/main/LICENSE"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
           >License</Link>
         </div>
