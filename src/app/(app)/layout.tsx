@@ -6,8 +6,8 @@ import Header from "@/components/header";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Refinaid | Bridging the Gap with AI For Everyone",
-  description: "An open-source learning platform, making AI accessible to everyone, no programming skills needed. Empowering all to explore the future of AI.",
+  title: "Stock Tracker | Modern Stock Tracking Application for Your Portfolio",
+  description: "An open-source stock tracking application that helps you keep track of your portfolio and make better investment decisions.",
   icons: {
     shortcut: "/favicon.ico",
   },

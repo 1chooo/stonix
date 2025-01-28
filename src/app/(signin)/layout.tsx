@@ -1,5 +1,15 @@
+import type { Metadata } from "next";
+
 import { ReactNode } from 'react';
 import AuthHeader from '@/components/auth-header';
+
+export const metadata: Metadata = {
+  title: "Stock Tracker | Modern Stock Tracking Application for Your Portfolio",
+  description: "An open-source stock tracking application that helps you keep track of your portfolio and make better investment decisions.",
+  icons: {
+    shortcut: "/favicon.ico",
+  },
+};
 
 export default function SignLayout({ children }: { children: ReactNode }) {
   return (

@@ -6,7 +6,7 @@ import ThemeProvider from "@/components/theme/theme-provider";
 import "@/app/globals.css";
 
 export const metadata: Metadata = {
-  title: "Trade Tracker | Modern Stock Tracking Application for Your Portfolio",
+  title: "Stock Tracker | Modern Stock Tracking Application for Your Portfolio",
   description: "An open-source stock tracking application that helps you keep track of your portfolio and make better investment decisions.",
   icons: {
     shortcut: "/favicon.ico",

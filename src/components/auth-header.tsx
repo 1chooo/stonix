@@ -26,7 +26,7 @@ function AuthHeader() {
             draggable={false}
           />
           <h1 className="hidden text-2xl font-bold sm:block">
-            Trade Tracker
+            Stock Tracker
           </h1>
         </Link>
         <div className="flex-shrink-0 flex items-center justify-end space-x-4">
