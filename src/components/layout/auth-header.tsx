@@ -4,7 +4,7 @@ import Link from "next/link"
 import React from "react"
 import Image from "next/image"
 import { ModeToggle } from "@/components/theme/mode-toggle"
-import { VisitGitHub } from "@/components/visit-github"
+import { VisitGitHub } from "@/components/layout/github"
 
 function AuthHeader() {
   return (

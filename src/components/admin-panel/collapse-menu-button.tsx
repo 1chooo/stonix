@@ -45,6 +45,7 @@ interface CollapseMenuButtonProps {
 export function CollapseMenuButton({
   icon: Icon,
   label,
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   active,
   submenus,
   isOpen
