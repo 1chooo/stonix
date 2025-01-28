@@ -130,7 +130,7 @@ function Header() {
               draggable={false}
             />
             <h1 className="hidden text-2xl font-bold sm:block">
-              Stock Tracker
+              Stonix
             </h1>
           </Link>
         </div>

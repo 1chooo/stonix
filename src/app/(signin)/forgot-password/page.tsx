@@ -14,7 +14,7 @@ export default function Login() {
             </h1>
 
             <p className="text-center text-gray-400">
-              To reset your password, please enter the email address of your Stock Tracker account.
+              To reset your password, please enter the email address of your Stonix account.
             </p>
 
             <div className="space-y-4">

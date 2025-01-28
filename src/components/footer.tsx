@@ -86,7 +86,7 @@ const Footer = () => {
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
           >Terms</Link>
           <Link
-            href="https://github.com/1chooo/Stock-tracker/blob/main/LICENSE"
+            href="https://github.com/1chooo/stonix/blob/main/LICENSE"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
           >License</Link>
         </div>
