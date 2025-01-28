@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import { ReactNode } from 'react';
-import AuthHeader from '@/components/auth-header';
+import AuthHeader from '@/components/layout/auth-header';
 
 export const metadata: Metadata = {
   title: "Stonix | Modern Stock Tracking Application for Your Portfolio",
