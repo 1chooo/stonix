@@ -156,7 +156,7 @@ function Hero() {
         An open-source stock tracking application that helps you keep track of your portfolio and make better investment decisions.
       </p>
       <div className="flex gap-4 justify-center align-middle">
-        <Link href="#get-started" className={buttonVariants()}>
+        <Link href="/signin" className={buttonVariants()}>
           Start for free
           <ArrowUpRightIcon className="ml-2 h-5 w-5" />
         </Link>
