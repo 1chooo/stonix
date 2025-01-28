@@ -131,9 +131,7 @@ function Header() {
             <Link
               className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10"
               href="/#"
-              target="_blank"
-              rel="noreferrer noopener"
-              aria-label="GitHub"
+              aria-label="Guestbook"
             >
               Guestbook
             </Link>
