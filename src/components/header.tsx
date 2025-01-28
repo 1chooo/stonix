@@ -148,7 +148,7 @@ function Header() {
         <div className="flex-shrink-0 flex items-center justify-end space-x-4">
           <VisitGitHub />
           <ModeToggle />
-          <Link href="#get-started" className={buttonVariants()}>
+          <Link href="/signin" className={buttonVariants()}>
             Get Started
           </Link>
         </div>
