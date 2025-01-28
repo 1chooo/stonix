@@ -113,8 +113,13 @@ function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <div className="flex-shrink-0 w-[200px]">
-          <Link href="/" aria-label="Home" title="Home">
+        <div className="flex-shrink-0">
+          <Link
+            href="/"
+            aria-label="Home"
+            title="Home"
+            className="flex items-center space-x-2"
+          >
             <Image
               className="rounded-full"
               src="/favicon.ico"
@@ -124,6 +129,9 @@ function Header() {
               height={40}
               draggable={false}
             />
+            <h1 className="hidden text-2xl font-bold sm:block">
+              Trade Tracker
+            </h1>
           </Link>
         </div>
         <nav className="flex-grow flex justify-center">
