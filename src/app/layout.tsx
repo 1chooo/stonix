@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 
 import { inter } from "@/styles/fonts";
 import ThemeProvider from "@/components/theme/theme-provider";
-import Header from "@/components/header";
 import Footer from "@/components/footer"
 
 import "@/app/globals.css";
@@ -25,10 +24,7 @@ function RootLayout({ children }: { readonly children: React.ReactNode; }) {
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
-            {children}
-          </main>
+          {children}
           <Footer />
         </ThemeProvider>
       </body>
