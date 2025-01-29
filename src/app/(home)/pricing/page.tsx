@@ -25,12 +25,11 @@ function Features({ names }: { names: string[] }) {
 }
 
 const starter = [
-  "Simple AI",
-  "Chatger",
+  "Stock Visualizer",
+  "US/TW Stock Market",
 ]
 const pro = [
   "Everything in Starter",
-  "Feedback from Chatger TA",
   "Daily / Weekly / Yearly Stats",
   "Priority Support",
 ]

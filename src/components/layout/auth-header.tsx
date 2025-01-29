@@ -3,7 +3,7 @@
 import Link from "next/link"
 import React from "react"
 import Image from "next/image"
-import { ModeToggle } from "@/components/theme/mode-toggle"
+import { ThemeToggle } from "@/components/theme/theme-toggle"
 import { VisitGitHub } from "@/components/layout/github"
 
 function AuthHeader() {
@@ -31,7 +31,7 @@ function AuthHeader() {
         </Link>
         <div className="flex-shrink-0 flex items-center justify-end space-x-4">
           <VisitGitHub />
-          <ModeToggle />
+          <ThemeToggle />
         </div>
       </div>
     </header>

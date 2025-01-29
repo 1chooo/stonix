@@ -147,7 +147,7 @@ function Hero() {
           variants={h2Variants}
           initial="initial"
           animate="animate"
-          className="px-4 py-6 text-center text-base sm:text-lg text-gh-text-secondary"
+          className="px-4 py-6 text-center text-base sm:text-xl text-gh-text-secondary"
         >
           Modern Stock Tracking Application for Your Portfolio
         </motion.h2>

@@ -4,7 +4,6 @@ import { cva } from "class-variance-authority"
 import Link from "next/link"
 import React from "react"
 import Image from "next/image"
-import { ModeToggle } from "@/components/theme/mode-toggle"
 import { VisitGitHub } from "@/components/layout/github"
 import { Button } from "@/components/ui/button"
 import { Menu } from "lucide-react"
@@ -24,6 +23,8 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
+import { LanguageToggle } from "@/components/language-toggle"
+import { ThemeToggle } from "@/components/theme/theme-toggle"
 
 const buttonVariants = cva(
   [
@@ -59,7 +60,7 @@ function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-40 shadow-sm saturate-100 backdrop-blur-[10px]">
       <div className="mx-auto flex h-[60px] items-center px-4 sm:px-8">
-        <div className="sm:hidden mr-2">
+        <div className="lg:hidden mr-2">
           <DropdownMenu>
             <TooltipProvider disableHoverableContent>
               <Tooltip delayDuration={100}>
@@ -113,7 +114,7 @@ function Header() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <div className="flex-shrink-0">
+        <div className="flex-shrink-0 ">
           <Link
             href="/"
             aria-label="Home"
@@ -135,7 +136,7 @@ function Header() {
           </Link>
         </div>
         <nav className="flex-grow flex justify-center">
-          <div className="gap-5 text-lg font-medium hidden sm:flex">
+          <div className="gap-5 text-lg font-medium hidden lg:flex">
             <Link
               className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10"
               href="/#"
@@ -151,9 +152,10 @@ function Header() {
             </Link>
           </div>
         </nav>
-        <div className="flex-shrink-0 flex items-center justify-end space-x-4">
+        <div className="flex-shrink-0 flex items-center justify-end space-x-2 w-[200px]">
+          <LanguageToggle />
           <VisitGitHub />
-          <ModeToggle />
+          <ThemeToggle />
           <Link href="/signin" className={buttonVariants()}>
             Get Started
           </Link>
