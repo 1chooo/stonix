@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { getRequestConfig } from "next-intl/server";
 
 // Can be imported from a shared config
-export const locales = ["en", "zh-Hant-Tw", "jp"] as const;
+export const locales = ["en", "zh-Hant-Tw"] as const;
 
 export type IntlLocale = (typeof locales)[number];
 
@@ -147,77 +147,6 @@ export const messages = {
       translationDisclaimer: "",
       privacy: "隱私政策",
       terms: "服務條款",
-    },
-  },
-  jp: {
-    hero: {
-      title: "AWS コミュニティデー台湾 2024",
-      banner: "スポンサーを募集しています",
-      description: "AWS の専門家や仲間とつながり、共に学び、共有し、革新する。",
-      register: "今すぐ登録",
-      date: "2024年9月28日（土）",
-      location: "ボトルキャップファクトリー台北（南港駅隣接）",
-    },
-    header: {
-      register: "登録する",
-    },
-    sponsors: {
-      title: "スポンサー",
-      heading: "皆様のご支援なしでは実現できません",
-      titanium: "チタニウム",
-      diamond: "ダイヤモンド",
-      gold: "ゴールド",
-      silver: "シルバー",
-    },
-    sessions: {
-      keynote: "キーノート",
-      title: "セッション",
-      heading: "さらなるセッションが近日公開 - お楽しみに",
-      notAvailable: "現在、利用可能なセッションはありません。",
-      keynoteAndPanel: "基調講演とパネルディスカッション",
-      comingSoon: "エキサイティングなセッションが近日公開",
-      MandarinSess: "中国語セッション",
-      EnglishSess: "英語セッション",
-      table: {
-        title: "タイトル",
-        time: "時間",
-        speakers: "スピーカー",
-      },
-      tabs: {
-        main: "メイントラック",
-        workshops: "ワークショップ",
-        lightning: "ライトニングトーク",
-      },
-      eric: {
-        bedrock: {
-          title:
-            "ゼロから始める：AWS Bedrock を活用したカスタム AI ソリューションの構築",
-        },
-      },
-    },
-    panelDiscussion: {
-      title: "パネルディスカッション",
-      heading: "不安な世代を解き明かす：クラウド、AI、新世代の人材が融合する道",
-      host: "ホスト",
-      speaker: "スピーカー",
-    },
-    volunteers: {
-      title: "ボランティア",
-      heading: "一人の努力は加算であり、チームの努力は乗算です",
-    },
-    footer: {
-      sponsor: {
-        message: "スポンサーにご興味がありますか？",
-        contact: "お問い合わせ",
-        pricing: "スポンサーシッププランを見る",
-        personal: "個人協賛",
-        enterprise: "企業協賛",
-      },
-      copyright: "© 2024 AWS User Group Taiwan. All rights reserved.",
-      translationDisclaimer:
-        "免責事項：このページは生成AIによって翻訳されており、内容が不正確である可能性があります。",
-      privacy: "プライバシーポリシー",
-      terms: "利用規約",
     },
   },
 } as const satisfies Record<IntlLocale, unknown>;

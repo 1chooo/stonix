@@ -14,13 +14,11 @@ import Link from "next/link";
 const languageMap: Record<IntlLocale, string> = {
   en: "English",
   "zh-Hant-Tw": "繁體中文",
-  jp: "日本語",
 };
 
 const languagePathMap: Record<IntlLocale, string> = {
-  en: "/en",
-  "zh-Hant-Tw": "/",
-  jp: "/jp",
+  en: "/",
+  "zh-Hant-Tw": "/tw",
 };
 
 export const LanguageToggle = () => (
