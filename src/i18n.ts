@@ -220,7 +220,7 @@ export const messages = {
       terms: "利用規約",
     },
   },
-} as const satisfies Record<IntlLocale, any>;
+} as const satisfies Record<IntlLocale, unknown>;
 
 export default getRequestConfig(async ({ locale }) => {
   const message = messages[locale as keyof typeof messages];
