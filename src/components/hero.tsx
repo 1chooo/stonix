@@ -101,8 +101,8 @@ const buttonVariants = cva(
 )
 
 function Hero() {
-    const t = useTranslations('HomePage');
-  
+  const t = useTranslations("HomePage");
+
   function BlinkingCursor() {
     const [isVisible, setIsVisible] = useState(true);
 
@@ -142,7 +142,7 @@ function Hero() {
             animate="animate"
             className="block text-6xl sm:text-8xl sm:inline-block bg-gradient-to-r from-blue-500 to-purple-700 bg-clip-text text-transparent"
           >
-            Stonix
+            {t('project')}
             <BlinkingCursor />
           </motion.span>
         </motion.h1>
@@ -150,17 +150,17 @@ function Hero() {
           variants={h2Variants}
           initial="initial"
           animate="animate"
-          className="px-4 py-6 text-center text-base sm:text-xl text-gh-text-secondary"
+          className="px-4 py-6 text-center text-lg md:text-xl text-gh-text-secondary"
         >
-          Modern Stock Tracking Application for Your Portfolio
+          {t('subtitle')}
         </motion.h2>
       </motion.div>
-      <p className="leading-6 text-muted-foreground text-center max-w-2xl mx-auto">
-        An open-source stock tracking application that helps you keep track of your portfolio and make better investment decisions.
+      <p className="leading-6 text-muted-foreground text-center max-w-2xl mx-auto text-lg md:text-xl">
+        {t('description')}
       </p>
       <div className="flex gap-4 justify-center align-middle">
         <Link href="/signin" className={buttonVariants()}>
-          Start for free
+          {t('start')}
           <ArrowUpRightIcon className="ml-2 h-5 w-5" />
         </Link>
       </div>
