@@ -19,12 +19,12 @@ export const LanguageToggle = () => (
     </DropdownMenuTrigger>
     <DropdownMenuContent>
       <DropdownMenuItem key="en" asChild>
-        <Link href="/" lang="en" scroll={false}>
+        <Link href="/en" lang="en" scroll={false}>
           English
         </Link>
       </DropdownMenuItem>
       <DropdownMenuItem key="zh-Hant-Tw" asChild>
-        <Link href="/#" lang="zh-Hant-Tw" scroll={false}>
+        <Link href="/tw" lang="zh-Hant-Tw" scroll={false}>
           繁體中文
         </Link>
       </DropdownMenuItem>

@@ -13,7 +13,9 @@ export const metadata: Metadata = {
   },
 };
 
-function HomeLayout({ children }: { readonly children: React.ReactNode; }) {
+function HomeLayout(
+  { children }: { readonly children: React.ReactNode; }
+) {
   return (
     <>
       <Header />
