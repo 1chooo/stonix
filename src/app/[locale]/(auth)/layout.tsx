@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SignInLayout({ children }: { children: ReactNode }) {
+export default function AuthLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <AuthHeader />
