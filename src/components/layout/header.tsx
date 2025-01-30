@@ -90,17 +90,17 @@ function Header() {
               <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem className="hover:cursor-pointer" asChild>
-                  <Link href="/#" className="flex items-center">
+                  <Link href={`/${locale}/#`} className="flex items-center">
                     Guestbook
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="hover:cursor-pointer" asChild>
-                  <Link href="/pricing" className="flex items-center">
+                  <Link href={`/${locale}/pricing`} className="flex items-center">
                     Pricing
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="hover:cursor-pointer" asChild>
-                  <Link href="/#" className="flex items-center">
+                  <Link href={`/${locale}/#`} className="flex items-center">
                     Blog
                   </Link>
                 </DropdownMenuItem>
@@ -119,7 +119,7 @@ function Header() {
         </div>
         <div className="flex-shrink-0 ">
           <Link
-            href="/"
+            href={`/${locale}/`}
             aria-label="Home"
             title="Home"
             className="flex items-center space-x-2"
@@ -142,7 +142,7 @@ function Header() {
           <div className="gap-5 text-lg font-medium hidden lg:flex">
             <Link
               className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10"
-              href="/#"
+              href={`/${locale}/#`}
               aria-label="Guestbook"
             >
               Guestbook
@@ -150,7 +150,7 @@ function Header() {
             <Link href={`/${locale}/pricing`} className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10">
               Pricing
             </Link>
-            <Link href="/#" className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10">
+            <Link href={`/${locale}/#`} className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10">
               Blog
             </Link>
           </div>
@@ -159,7 +159,7 @@ function Header() {
           <LanguageToggle />
           <VisitGitHub />
           <ThemeToggle />
-          <Link href="/signin" className={buttonVariants()}>
+          <Link href={`/${locale}/dashboard`} className={buttonVariants()}>
             Get Started
           </Link>
         </div>
