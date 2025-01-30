@@ -42,7 +42,7 @@ export function getMenuList(pathname: string): Group[] {
       ]
     },
     {
-      groupLabel: "Contents",
+      groupLabel: "Portfolio",
       menus: [
         {
           href: "",

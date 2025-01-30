@@ -1,6 +1,6 @@
+import { ReactNode } from 'react';
 import type { Metadata } from "next";
 
-import { ReactNode } from 'react';
 import AuthHeader from '@/components/layout/auth-header';
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function SignLayout({ children }: { children: ReactNode }) {
+export default function SignInLayout({ children }: { children: ReactNode }) {
   return (
     <>
       <AuthHeader />
