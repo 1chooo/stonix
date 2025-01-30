@@ -5,6 +5,7 @@ import { cva } from "class-variance-authority"
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowUpRightIcon } from "@primer/octicons-react";
+import { useTranslations } from 'next-intl';
 
 const containerVariants = {
   initial: {
@@ -100,6 +101,8 @@ const buttonVariants = cva(
 )
 
 function Hero() {
+    const t = useTranslations('HomePage');
+  
   function BlinkingCursor() {
     const [isVisible, setIsVisible] = useState(true);
 
@@ -132,7 +135,7 @@ function Hero() {
           animate="animate"
           className="text-center text-4xl font-bold sm:text-8xl"
         >
-          We are{" "}
+          {t('title')}{" "}
           <motion.span
             variants={nameVariants}
             initial="initial"

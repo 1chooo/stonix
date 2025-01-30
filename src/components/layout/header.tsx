@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { LanguageToggle } from "@/components/language-toggle"
 import { ThemeToggle } from "@/components/theme/theme-toggle"
+import { useLocale } from "next-intl";
 
 const buttonVariants = cva(
   [
@@ -57,6 +58,8 @@ const buttonVariants = cva(
 )
 
 function Header() {
+  const locale = useLocale();
+
   return (
     <header className="fixed inset-x-0 top-0 z-40 shadow-sm saturate-100 backdrop-blur-[10px]">
       <div className="mx-auto flex h-[60px] items-center px-4 sm:px-8">
@@ -105,7 +108,7 @@ function Header() {
               <DropdownMenuSeparator />
               <DropdownMenuItem className="p-2 focus:bg-transparent">
                 <Link
-                  href="/pricing"
+                  href={`/${locale}/pricing`}
                   className="flex w-full items-center justify-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                 >
                   Pricing
@@ -144,7 +147,7 @@ function Header() {
             >
               Guestbook
             </Link>
-            <Link href="/pricing" className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10">
+            <Link href={`/${locale}/pricing`} className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10">
               Pricing
             </Link>
             <Link href="/#" className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10">
@@ -166,4 +169,3 @@ function Header() {
 }
 
 export default Header
-

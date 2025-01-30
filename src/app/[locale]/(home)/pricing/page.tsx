@@ -3,7 +3,7 @@
 import React from "react"
 import Link from "next/link"
 import { Check } from "lucide-react"
-
+import { useTranslations } from "next-intl";
 
 function Feature({ name }: { name: string }) {
   return (
@@ -34,8 +34,9 @@ const pro = [
   "Priority Support",
 ]
 
-
 function Pricing() {
+  const t = useTranslations("Pricing");
+
   return (
     <div
       className="mt-16 flex w-full flex-col items-center justify-center gap-10 sm:flex-row sm:items-stretch"
@@ -44,7 +45,7 @@ function Pricing() {
         className="flex w-[90%] flex-col gap-10 rounded-xl bg-secondary p-10 sm:w-2/5"
       >
         <div className="flex flex-col gap-2">
-          <h2 className="text-2xl">Starter</h2>
+          <h2 className="text-2xl">{t('starter')}</h2>
           <div className="flex items-end gap-1">
             <h2 className="text-4xl font-semibold">$0</h2>
             <div className="text-sm opacity-50">/ forever</div>

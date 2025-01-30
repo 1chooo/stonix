@@ -1,0 +1,16 @@
+{
+    "LocaleSwitcher": {
+        "label": "Change language",
+        "locale": {
+            "en": "English",
+            "tw": "繁體中文"
+        }
+    },
+    "HomePage": {
+        "title": "We are"
+    },
+    "Pricing": {
+        "starter": "Starter"
+    },
+    "Header": {}
+}
