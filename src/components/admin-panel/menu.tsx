@@ -15,6 +15,8 @@ import {
   TooltipContent,
   TooltipProvider
 } from "@/components/ui/tooltip";
+import { useLocale } from "next-intl";
+
 
 interface MenuProps {
   isOpen: boolean | undefined;
@@ -23,6 +25,8 @@ interface MenuProps {
 export function Menu({ isOpen }: MenuProps) {
   const pathname = usePathname();
   const menuList = getMenuList(pathname);
+  const locale = useLocale();
+
 
   return (
     <ScrollArea className="[&>div>div[style]]:!block">
@@ -68,7 +72,7 @@ export function Menu({ isOpen }: MenuProps) {
                               className="w-full justify-start h-10 mb-1"
                               asChild
                             >
-                              <Link href={href}>
+                              <Link href={`/${locale}/${href}`} >
                                 <span
                                   className={cn(isOpen === false ? "" : "mr-4")}
                                 >
