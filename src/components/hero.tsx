@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowUpRightIcon } from "@primer/octicons-react";
 import { useTranslations } from 'next-intl';
+import { useLocale } from "next-intl";
 
 const containerVariants = {
   initial: {
@@ -102,6 +103,7 @@ const buttonVariants = cva(
 
 function Hero() {
   const t = useTranslations("HomePage");
+  const locale = useLocale();
 
   function BlinkingCursor() {
     const [isVisible, setIsVisible] = useState(true);
@@ -159,7 +161,7 @@ function Hero() {
         {t('description')}
       </p>
       <div className="flex gap-4 justify-center align-middle">
-        <Link href="/signin" className={buttonVariants()}>
+        <Link href={`/${locale}/dashboard`} className={buttonVariants()}>
           {t('start')}
           <ArrowUpRightIcon className="ml-2 h-5 w-5" />
         </Link>
