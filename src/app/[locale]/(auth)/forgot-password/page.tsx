@@ -2,8 +2,11 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent } from "@/components/ui/card"
+import { useLocale } from "next-intl"
 
 export default function Login() {
+  const locale = useLocale();
+
   return (
     <div className="min-h-screen flex items-center justify-center p-4 -mt-16">
       <div className="w-full max-w-md space-y-8">
@@ -36,7 +39,7 @@ export default function Login() {
             </Button>
 
             <p className="text-center text-gray-400">
-              <Link href="/signin" className="transition-colors underline">
+              <Link href={`/${locale}/signin`} className="transition-colors underline">
                 Go to sign in
               </Link>
             </p>

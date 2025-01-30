@@ -8,8 +8,11 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator
 } from "@/components/ui/breadcrumb";
+import { useLocale } from "next-intl";
 
 export default function DashboardPage() {
+  const locale = useLocale();
+
   return (
     <ContentLayout title="Dashboard">
       <Breadcrumb>
@@ -25,6 +28,12 @@ export default function DashboardPage() {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
+      <div className="text-sm text-center justify-center my-4">
+        <Link href={`/${locale}/signin`} className="text-sm underline dark:text-sky-400 text-sky-500 font-semibold">
+          Sign in
+        </Link>{' '}
+        to save focus history and tasks.
+      </div>
     </ContentLayout>
   );
 }
