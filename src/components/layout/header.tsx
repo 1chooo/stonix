@@ -19,7 +19,6 @@ import {
   DropdownMenuContent,
   DropdownMenuGroup,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
@@ -61,7 +60,7 @@ function Header() {
   const locale = useLocale();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 shadow-sm saturate-100 backdrop-blur-[10px]">
+    <header className="fixed inset-x-0 top-0 z-40 shadow-sm saturate-100 backdrop-blur-[10px] border-b border-gray-200 dark:border-gray-800">
       <div className="mx-auto flex h-[60px] items-center px-4 sm:px-8">
         <div className="lg:hidden mr-2">
           <DropdownMenu>
@@ -79,15 +78,6 @@ function Header() {
               </Tooltip>
             </TooltipProvider>
             <DropdownMenuContent className="w-56" align="end" forceMount>
-              <DropdownMenuLabel className="font-normal">
-                <div className="flex flex-col space-y-1">
-                  <p className="text-sm font-medium leading-none">Hugo Lin</p>
-                  <p className="text-xs leading-none text-muted-foreground">
-                    hugolin@example.com
-                  </p>
-                </div>
-              </DropdownMenuLabel>
-              <DropdownMenuSeparator />
               <DropdownMenuGroup>
                 <DropdownMenuItem className="hover:cursor-pointer" asChild>
                   <Link href={`/${locale}/#`} className="flex items-center">
@@ -108,10 +98,10 @@ function Header() {
               <DropdownMenuSeparator />
               <DropdownMenuItem className="p-2 focus:bg-transparent">
                 <Link
-                  href={`/${locale}/pricing`}
+                  href={`/${locale}/#`}
                   className="flex w-full items-center justify-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
                 >
-                  Pricing
+                  What&apos;s New
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
