@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-async function RootLayout({
+export default async function LocaleLayout({
   children,
   params: { locale }
 }: {
@@ -54,5 +54,3 @@ async function RootLayout({
     </html >
   );
 };
-
-export default RootLayout;

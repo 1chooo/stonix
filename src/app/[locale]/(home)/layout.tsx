@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   },
 };
 
-function HomeLayout(
+export default function HomeLayout(
   { children }: { readonly children: React.ReactNode; }
 ) {
   return (
@@ -26,5 +26,3 @@ function HomeLayout(
     </>
   );
 };
-
-export default HomeLayout;
