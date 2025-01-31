@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Footer from "@/components/layout/footer"
 import Header from "@/components/layout/header";
+import { Gradient } from "@/components/gradient";
 
 import "@/app/globals.css";
 
@@ -19,6 +20,7 @@ export default function HomeLayout(
   return (
     <>
       <Header />
+      <Gradient />
       <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
         {children}
       </main>
