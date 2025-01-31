@@ -3,6 +3,7 @@
 import { ActivityCalendar } from "react-activity-calendar"
 import { Card } from "@/components/ui/card"
 import type { ThemeInput } from "react-activity-calendar"
+import { useTheme } from "next-themes"
 
 // Generate sample data for the last year
 function generateSampleData() {
@@ -56,10 +57,9 @@ const labels = {
   },
 };
 
-// FIXME: only the dark theme is working
 const explicitTheme: ThemeInput = {
-  light: ['#161b22', '#8ea9fa'],
-  dark: ['#ebedf0', '#8ea9fa'],
+  light: ['#ebedf0', '#8ea9fa'],
+  dark: ['#161b22', '#8ea9fa'],
 };
 
 export default function ActivityHeatmap() {
@@ -93,6 +93,7 @@ export default function ActivityHeatmap() {
   }
 
   const { currentStreak, longestStreak } = calculateStreaks(data)
+  const { resolvedTheme: colorScheme } = useTheme()
 
   return (
     <Card className="p-6">
@@ -107,6 +108,7 @@ export default function ActivityHeatmap() {
         </div>
       </div>
       <ActivityCalendar
+        colorScheme={colorScheme === "dark" ? "dark" : "light"}
         data={data}
         theme={explicitTheme}
         labels={labels}
