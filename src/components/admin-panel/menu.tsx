@@ -13,15 +13,15 @@ import {
   TooltipContent,
   TooltipProvider,
 } from "@/components/ui/tooltip";
-
-import { cn } from "@/lib/utils";
-import { getMenuList } from "@/lib/menu-list";
+import { Input } from "@/components/ui/input";
 
 import {
   Ellipsis,
   LogOut,
+  Search,
 } from "lucide-react";
-
+import { cn } from "@/lib/utils";
+import { getMenuList } from "@/lib/menu-list";
 
 interface MenuProps {
   isOpen: boolean | undefined;
@@ -32,11 +32,17 @@ export function Menu({ isOpen }: MenuProps) {
   const menuList = getMenuList(pathname);
   const locale = useLocale();
 
-
   return (
     <ScrollArea className="[&>div>div[style]]:!block">
       <nav className="mt-8 h-full w-full">
-        <ul className="flex flex-col min-h-[calc(100vh-48px-36px-16px-32px)] lg:min-h-[calc(100vh-32px-40px-32px)] items-start space-y-1 px-2">
+        <div className="relative">
+          <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+          <Input placeholder="Search or jump to" className="pl-8" />
+          <kbd className="pointer-events-none absolute right-2 top-2.5 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs text-muted-foreground opacity-100 sm:flex">
+            <span className="text-xs">⌘</span>/
+          </kbd>
+        </div>
+        <ul className="flex flex-col items-start space-y-1 px-2">
           {menuList.map(({ groupLabel, menus }, index) => (
             <li className={cn("w-full", groupLabel ? "pt-5" : "")} key={index}>
               {(isOpen && groupLabel) || isOpen === undefined ? (
