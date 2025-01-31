@@ -1,7 +1,13 @@
 "use client";
 
 import Link from "next/link";
-import { LayoutGrid, LogOut, User, CreditCard, MessageCircle } from "lucide-react";
+import {
+  Settings,
+  LogOut,
+  User,
+  House,
+  Search,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -19,8 +25,11 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu";
+import { useLocale } from "next-intl";
 
 export function UserNav() {
+  const locale = useLocale();
+
   return (
     <DropdownMenu>
       <TooltipProvider disableHoverableContent>
@@ -55,44 +64,48 @@ export function UserNav() {
         <DropdownMenuGroup>
           <DropdownMenuItem className="hover:cursor-pointer" asChild>
             <Link href="/#" className="flex items-center">
-              <LayoutGrid className="w-4 h-4 mr-3 text-muted-foreground" />
-              Dashboard
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem className="hover:cursor-pointer" asChild>
-            <Link href="/#" className="flex items-center">
               <User className="w-4 h-4 mr-3 text-muted-foreground" />
               Account
             </Link>
           </DropdownMenuItem>
-        </DropdownMenuGroup>
-        <DropdownMenuSeparator className="sm:hidden" />
-        <DropdownMenuGroup className="sm:hidden">
           <DropdownMenuItem className="hover:cursor-pointer" asChild>
-            <Link href="/pricing" className="flex items-center">
-              <CreditCard className="w-4 h-4 mr-3 text-muted-foreground" />
-              Pricing
-            </Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem className="hover:cursor-pointer" asChild>
-            <Link href="https://refinaid-docs.vercel.app" className="flex items-center">
-              <MessageCircle className="w-4 h-4 mr-3 text-muted-foreground" />
-              Guestbook
+            <Link href="/#" className="flex items-center">
+              <Settings className="w-4 h-4 mr-3 text-muted-foreground" />
+              Settings
             </Link>
           </DropdownMenuItem>
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
-        <DropdownMenuItem className="hover:cursor-pointer" onClick={() => { }}>
-          <LogOut className="w-4 h-4 mr-3 text-muted-foreground" />
-          Sign out
+        <DropdownMenuItem className="hover:cursor-pointer" asChild>
+          <Link href="/#" className="flex items-center">
+            <Search className="w-4 h-4 mr-3 text-muted-foreground" />
+            Command Menu
+            <kbd className="pointer-events-none absolute right-2 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs text-muted-foreground opacity-100 sm:flex">
+              <span className="text-xs">⌘</span>K
+            </kbd>
+          </Link>
         </DropdownMenuItem>
+
+        <DropdownMenuSeparator />
+        <DropdownMenuGroup>
+          <DropdownMenuItem className="hover:cursor-pointer" asChild>
+            <Link href={`/${locale}`}>
+              <House className="w-4 h-4 mr-3 text-muted-foreground" />
+              Home
+            </Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem className="hover:cursor-pointer" onClick={() => { }}>
+            <LogOut className="w-4 h-4 mr-3 text-muted-foreground" />
+            Sign out
+          </DropdownMenuItem>
+        </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem className="p-2 focus:bg-transparent">
           <Link
-            href="/pricing"
+            href={`/${locale}/pricing`}
             className="flex w-full items-center justify-center rounded-md bg-primary px-3 py-2 text-sm font-medium text-primary-foreground hover:bg-primary/90"
           >
-            Pricing
+            Upgrade to Pro
           </Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
