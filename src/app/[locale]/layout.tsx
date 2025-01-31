@@ -51,6 +51,6 @@ export default async function LocaleLayout({
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
-    </html >
+    </html>
   );
 };
