@@ -42,7 +42,7 @@ function Pricing() {
       className="mt-16 flex w-full flex-col items-center justify-center gap-10 sm:flex-row sm:items-stretch"
     >
       <div
-        className="flex w-[90%] flex-col gap-10 rounded-xl bg-secondary p-10 sm:w-2/5"
+        className="flex w-[90%] flex-col gap-10 rounded-xl bg-secondary p-10 sm:w-2/5 bg-gray-50 dark:bg-gray-900"
       >
         <div className="flex flex-col gap-2">
           <h2 className="text-2xl">{t('starter')}</h2>
@@ -61,7 +61,7 @@ function Pricing() {
         <Features names={starter} />
       </div>
       <div
-        className="flex w-[90%] flex-col gap-10 rounded-xl bg-secondary p-10 sm:w-2/5"
+        className="flex w-[90%] flex-col gap-10 rounded-xl bg-secondary p-10 sm:w-2/5 bg-gray-50 dark:bg-gray-900"
       >
         <div className="flex flex-col gap-2">
           <h2 className="text-2xl">Pro</h2>
