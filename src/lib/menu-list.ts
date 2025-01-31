@@ -5,7 +5,8 @@ import {
   Bookmark,
   SquarePen,
   LayoutGrid,
-  LucideIcon
+  LucideIcon,
+  ChartColumnBig,
 } from "lucide-react";
 
 type Submenu = {
@@ -63,6 +64,11 @@ export function getMenuList(pathname: string): Group[] {
           href: "categories",
           label: "Categories",
           icon: Bookmark
+        },
+        {
+          href: "stats",
+          label: "stats",
+          icon: ChartColumnBig
         },
         {
           href: "tags",

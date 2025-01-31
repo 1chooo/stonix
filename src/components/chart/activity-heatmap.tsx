@@ -1,47 +1,3 @@
-https://blog.logrocket.com/implementing-authentication-in-next-js-with-firebase/
-
-
-When attempting to switch themes, only the dark theme is applied, regardless of the selected theme.
-
-I defined an explicit theme as follows:
-
-```tsx
-const explicitTheme: ThemeInput = {
-  light: ['#ebedf0', '#8ea9fa'],
-  dark: ['#161b22', '#8ea9fa'],
-};
-```
-
-To debug the issue, I swapped the values of dark and light, but the applied theme remained the same (dark theme), confirming that the system is only recognizing the dark theme.
-
-```tsx
-const explicitTheme: ThemeInput = {
-  light: ['#161b22', '#8ea9fa'],
-  dark: ['#ebedf0', '#8ea9fa'],
-};
-```
-
-I suspect that additional configurations are required for ActivityCalendar to properly update according to the selected theme.
-
-
-### Screenshots
-
-| Dark Theme | Light Theme |
-|------------|-------------|
-| | |
-
-### How to reproduce
-
-1. git clone git@github.com:1chooo/stonix.git
-2. pnpm i
-3. pnpm run dev
-4. Open localhost:3000/en/dashboard/stats
-5. Switch the theme
-6. See bug
-
-### Complete source code
-
-```tsx
 "use client"
 
 import { ActivityCalendar } from "react-activity-calendar"
@@ -100,9 +56,10 @@ const labels = {
   },
 };
 
+// FIXME: only the dark theme is working
 const explicitTheme: ThemeInput = {
-  dark: ['#161b22', '#8ea9fa'],
-  light: ['#ebedf0', '#8ea9fa'],
+  light: ['#161b22', '#8ea9fa'],
+  dark: ['#ebedf0', '#8ea9fa'],
 };
 
 export default function ActivityHeatmap() {
@@ -158,4 +115,4 @@ export default function ActivityHeatmap() {
     </Card>
   )
 }
-```
+
