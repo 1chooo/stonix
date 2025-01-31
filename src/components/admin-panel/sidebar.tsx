@@ -8,6 +8,8 @@ import { cn } from "@/lib/utils";
 import { PanelsTopLeft } from "lucide-react";
 import Link from "next/link";
 import { useLocale } from "next-intl";
+import { Search } from "lucide-react"
+import { Input } from "@/components/ui/input";
 
 export function Sidebar() {
   const locale = useLocale();
@@ -50,6 +52,13 @@ export function Sidebar() {
             </h1>
           </Link>
         </Button>
+        <div className="relative">
+          <Search className="absolute left-2 top-2.5 h-4 w-4 text-muted-foreground" />
+          <Input placeholder="Search or jump to" className="pl-8" />
+          <kbd className="pointer-events-none absolute right-2 top-2.5 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs text-muted-foreground opacity-100 sm:flex">
+            <span className="text-xs">⌘</span>/
+          </kbd>
+        </div>
         <Menu isOpen={getOpenState()} />
       </div>
     </aside>
