@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import type { Metadata } from "next";
 
 import AuthHeader from '@/components/layout/auth-header';
@@ -11,7 +10,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AuthLayout({ children }: { children: ReactNode }) {
+export default function AuthLayout({
+  children
+}: {
+  readonly children: React.ReactNode;
+}) {
   return (
     <>
       <AuthHeader />

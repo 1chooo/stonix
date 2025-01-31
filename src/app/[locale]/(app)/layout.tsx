@@ -1,9 +1,13 @@
 import AdminPanelLayout from "@/components/admin-panel/admin-panel-layout";
 
-export default function DemoLayout({
+export default function AppLayout({
   children
 }: {
-  children: React.ReactNode;
+  readonly children: React.ReactNode;
 }) {
-  return <AdminPanelLayout>{children}</AdminPanelLayout>;
+  return (
+    <AdminPanelLayout>
+      {children}
+    </AdminPanelLayout>
+  );
 }

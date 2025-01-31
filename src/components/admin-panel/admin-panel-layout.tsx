@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export default function AdminPanelLayout({
   children
 }: {
-  children: React.ReactNode;
+  readonly children: React.ReactNode;
 }) {
   const sidebar = useStore(useSidebar, (x) => x);
   if (!sidebar) return null;
