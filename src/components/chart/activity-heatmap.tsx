@@ -2,8 +2,8 @@
 
 import { ActivityCalendar } from "react-activity-calendar"
 import { Card } from "@/components/ui/card"
-import type { ThemeInput } from "react-activity-calendar"
 import { useTheme } from "next-themes"
+import { labels, explicitTheme } from "@/lib/activity-heatmap"
 
 // Generate sample data for the last year
 function generateSampleData() {
@@ -25,42 +25,6 @@ function generateSampleData() {
   }
   return data
 }
-
-const labels = {
-  months: [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ],
-  weekdays: [
-    'Sun', // Sunday first!
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-    'Sat',
-  ],
-  totalCount: '{{count}} activities in {{year}}',
-  legend: {
-    less: 'Less',
-    more: 'More',
-  },
-};
-
-const explicitTheme: ThemeInput = {
-  light: ['#ebedf0', '#8ea9fa'],
-  dark: ['#161b22', '#8ea9fa'],
-};
 
 export default function ActivityHeatmap() {
 
@@ -117,4 +81,3 @@ export default function ActivityHeatmap() {
     </Card>
   )
 }
-
