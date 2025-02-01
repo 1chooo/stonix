@@ -1,13 +1,13 @@
 "use client"
 
-import Link from "next/link"
 import React from "react"
+import Link from "next/link"
 import Image from "next/image"
+import { useLocale } from "next-intl";
 import { LanguageToggle } from "@/components/language-toggle"
 import { ThemeToggle } from "@/components/theme/theme-toggle"
-import { VisitGitHub } from "@/components/layout/github"
-import { useLocale } from "next-intl";
-
+import { Button } from "@/components/ui/button"
+import { Github } from "lucide-react"
 
 function AuthHeader() {
   const locale = useLocale();
@@ -36,7 +36,15 @@ function AuthHeader() {
         </Link>
         <div className="flex-shrink-0 flex items-center justify-end space-x-4">
           <LanguageToggle />
-          <VisitGitHub />
+          <Button
+            variant="ghost"
+            size="sm"
+            aria-label="GitHub"
+            className="hidden sm:block"
+            onClick={() => window.open('https://github.com/1chooo/refinaid', '_blank')}
+          >
+            <Github />
+          </Button>
           <ThemeToggle />
         </div>
       </div>

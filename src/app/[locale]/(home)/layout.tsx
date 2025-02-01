@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 import Footer from "@/components/layout/footer"
-import Header from "@/components/layout/header";
+import HomeHeader from "@/components/layout/home-header";
 import { Gradient } from "@/components/gradient";
 import { Particles } from "@/components/magicui/particles";
 
@@ -20,7 +20,7 @@ export default function HomeLayout(
 ) {
   return (
     <>
-      <Header />
+      <HomeHeader />
       <Gradient />
       <Particles
         className="absolute top-0 left-0 w-full h-full"

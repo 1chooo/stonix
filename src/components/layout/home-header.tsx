@@ -4,9 +4,8 @@ import { cva } from "class-variance-authority"
 import Link from "next/link"
 import React from "react"
 import Image from "next/image"
-import { VisitGitHub } from "@/components/layout/github"
 import { Button } from "@/components/ui/button"
-import { Menu } from "lucide-react"
+import { Menu, Github } from "lucide-react"
 import {
   Tooltip,
   TooltipContent,
@@ -56,7 +55,7 @@ const buttonVariants = cva(
   },
 )
 
-function Header() {
+function HomeHeader() {
   const locale = useLocale();
 
   return (
@@ -147,7 +146,15 @@ function Header() {
         </nav>
         <div className="flex-shrink-0 flex items-center justify-end space-x-2 w-[200px]">
           <LanguageToggle />
-          <VisitGitHub />
+          <Button
+            variant="ghost"
+            size="sm"
+            aria-label="GitHub"
+            className="hidden sm:block"
+            onClick={() => window.open('https://github.com/1chooo/refinaid', '_blank')}
+          >
+            <Github />
+          </Button>
           <ThemeToggle />
           <Link href={`/${locale}/dashboard`} className={buttonVariants()}>
             Get Started
@@ -158,4 +165,4 @@ function Header() {
   )
 }
 
-export default Header
+export default HomeHeader
