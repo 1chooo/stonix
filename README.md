@@ -1,43 +1,66 @@
 # Stonix
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<a name="readme-top"></a>
 
-## Getting Started
+<a href="https://stonix.1chooo.com">
+  <img alt="Stonix Home Page" src="./.github/cover.png">
+</a>
 
-First, run the development server:
+<p align="center">
+  <img alt="" src="https://img.shields.io/badge/Next.js-000000.svg?style=for-the-badge&logo=Next.js&labelColor=000">
+  <img alt="" src="https://img.shields.io/github/languages/top/1chooo/stonix?style=for-the-badge&labelColor=000">
+  <img alt="" src="https://img.shields.io/github/license/1chooo/stonix?style=for-the-badge&labelColor=000">
+  <img src="https://img.shields.io/github/stars/1chooo/stonix?style=for-the-badge&labelColor=000" alt="Novel.sh's GitHub repo">
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+<p align="center">
+  <strong>
+    <a href="#-abstract">📍 Abstract</a>&nbsp;&nbsp;&bull;&nbsp;
+    <a href="#-features">✨ Feature</a>&nbsp;&nbsp;&bull;&nbsp;
+    <a href="#-contributing">🌏 Contributing</a>&nbsp;&nbsp;&bull;&nbsp;
+    <a href="#-contact-info">📲 Contact Info</a>&nbsp;&nbsp;&bull;&nbsp;
+    <a href="#-license">🪪 License</a>&nbsp;&nbsp;&bull;&nbsp;
+    <a href="https://docs.1chooo.com">📚 Docs</a>
+  </strong>
+</p>
+
+## 📍 Abstract
+
+💵 Modern Stock Tracking Visualizer for All Your Portfolio
+
+## ✨ Features
+
+
+## 🌏 Contributing
+
+[PRs](https://github.com/1chooo/stonix/pulls) and [Issues](https://github.com/1chooo/stonix/issues) are welcome! 🫵🏻
+
+Please read the [Contributing Guideline] for details on our code of conduct, and the process for submitting pull requests to us.
+
+[Contributing Guideline]: ./CONTRIBUTING.md
+
+## 🔩 Getting Started
+
+> [!NOTE]
+> We choose [`pnpm`](https://pnpm.io/) as our package manager. Make sure you have it installed before running the following commands.
+
+### Clone the Repository
+
+```shell
+$ git clone git@github.com:1chooo/stonix.git
+$ cd stonix
+$ pnpm install
+```
+
+### Run the Web App
+
+```shell
+$ pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## 📱 CONTACT INFO.
+## 📲 Contact Info
 
 > **Hugo ChunHo Lin**
 > 
@@ -50,11 +73,18 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 >    
 > </aside>
 
-
 ## 🪪 LICENSE
 
 Released under [MIT](./LICENSE) by [@1chooo](https://1chooo.com)
 
 This software can be modified and reused without restriction. The original license must be included with any copies of this software. If a significant portion of the source code is used, please provide a link back to this repository.
 
-Made with ❤️ by [@1chooo](https://1chooo.com)
+Made with 🖤 by [@1chooo][1chooo-com]
+
+[1chooo-com]: https://1chooo.com
+
+<p align="right" style="font-size: 14px; color: #555; margin-top: 20px;">
+    <a href="#readme-top" style="text-decoration: none; color: #007bff; font-weight: bold;">
+        ↑ Back to Top ↑
+    </a>
+</p>
