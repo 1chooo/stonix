@@ -3,8 +3,8 @@ import { ContentLayout } from "@/components/admin-panel/content-layout";
 import { useLocale } from "next-intl";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { NetworkPieChart } from "@/components/network-pie-chart"
-import { NetworkLineChart } from "@/components/network-line-chart"
+import { NetworkPieChart } from "@/components/chart/network-pie-chart"
+import { NetworkLineChart } from "@/components/chart/network-line-chart"
 
 export default function DashboardPage() {
   const locale = useLocale();
