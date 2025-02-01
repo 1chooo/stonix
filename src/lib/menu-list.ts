@@ -67,7 +67,7 @@ export function getMenuList(pathname: string): Group[] {
         },
         {
           href: "stats",
-          label: "stats",
+          label: "Stats",
           icon: ChartColumnBig
         },
         {
