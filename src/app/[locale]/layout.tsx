@@ -12,8 +12,31 @@ import "@/app/globals.css";
 export const metadata: Metadata = {
   title: "Stonix | Modern Stock Tracking Application for Your Portfolio",
   description: "An open-source stock tracking application that helps you keep track of your portfolio and make better investment decisions.",
+  openGraph: {
+    url: "https://stonix.vercel.app",
+    type: "website",
+    siteName: "Stonix",
+    title: "Stonix | Modern Stock Tracking Application for Your Portfolio",
+    description: "An open-source stock tracking application that helps you keep track of your portfolio and make better investment decisions.",
+    images: "/og.png",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Stonix | Modern Stock Tracking Application for Your Portfolio",
+    description:
+      "An open-source stock tracking application that helps you keep track of your portfolio and make better investment decisions.",
+    images: "/og.png",
+  },
   icons: {
-    shortcut: "/favicon.ico",
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: [
+      {
+        url: '/logo192.png',
+        sizes: '192x192',
+        type: 'image/png'
+      }
+    ],
   },
 };
 
