@@ -124,7 +124,7 @@ function Hero() {
   }
 
   return (
-    <div className="my-12 space-y-8">
+    <div className="my-24 space-y-8">
       <motion.div
         variants={containerVariants}
         initial="initial"
