@@ -8,13 +8,16 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import { Avatar, AvatarFallback, } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { useToast } from "@/hooks/use-toast";
 import { useAuthContext } from "@/context/auth-context";
 import { useLogout } from "@/firebase/auth/logout";
 
 export function SiteHeader() {
+  const { toast } = useToast();
   const { logout } = useLogout();
   const { user } = useAuthContext();
+
   return (
     <header className="fixed top-0 z-40 w-full border-b border-b-zinc-200 bg-white dark:border-b-zinc-700 dark:bg-zinc-900">
       <div className="container flex h-16 items-center space-x-4 sm:justify-between sm:space-x-0">
@@ -69,6 +72,10 @@ export function SiteHeader() {
                     type="button"
                     onClick={() => {
                       window.navigator.clipboard.writeText(`${user.email}`);
+                      toast({
+                        title: "Email copied",
+                        description: `${user.email}`,
+                      });
                     }}
                   >
                     <Mail className="mr-2 h-4 w-4" />

@@ -39,7 +39,6 @@ const FormSchemaEmailPassword = z.object({
 });
 
 export default function Home() {
-
   const { user } = useAuthContext();
   const { googleLogin, isPendingGoogleLogin } = useGoogleLogin();
   const { githubLogin, isPendingGithubLogin } = useGithubLogin();
