@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { setRequestLocale, getMessages } from 'next-intl/server';
 import ThemeProvider from "@/components/theme/theme-provider";
 import { routing } from '@/i18n/routing';
-import { inter } from "@/styles/fonts";
+import { inter } from "@/app/font";
 
 import "@/app/globals.css";
 
