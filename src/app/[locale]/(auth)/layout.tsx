@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import AuthHeader from '@/components/layout/auth-header';
+import Providers from "@/lib/providers";
 
 export const metadata: Metadata = {
   title: "Stonix | Modern Stock Tracking Application for Your Portfolio",
@@ -18,9 +19,11 @@ export default function AuthLayout({
   return (
     <>
       <AuthHeader />
-      <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
-        {children}
-      </main>
+      <Providers>
+        <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
+          {children}
+        </main>
+      </Providers>
     </>
   );
 }
