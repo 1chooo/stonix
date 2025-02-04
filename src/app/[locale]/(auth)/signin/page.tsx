@@ -1,6 +1,5 @@
 import Link from "next/link"
 import { useLocale } from "next-intl";
-import { Github } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -23,7 +22,7 @@ export default function LoginPage() {
           <CardHeader className="text-center">
             <CardTitle className="text-xl">Welcome back</CardTitle>
             <CardDescription>
-            Login to your Stonix account
+              Login to your Stonix account
             </CardDescription>
           </CardHeader>
 
@@ -34,6 +33,7 @@ export default function LoginPage() {
                   <Button
                     variant="outline"
                     className="w-full h-12"
+                    disabled
                   >
                     <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                       <path
@@ -42,16 +42,6 @@ export default function LoginPage() {
                       />
                     </svg>
                     Continue with Google
-                  </Button>
-                </div>
-
-                <div className="space-y-3">
-                  <Button
-                    variant="outline"
-                    className="w-full h-12"
-                  >
-                    <Github className="w-5 h-5 mr-2"/>
-                    Continue with GitHub
                   </Button>
                 </div>
 
