@@ -5,6 +5,7 @@ import { useSidebar } from "@/hooks/use-sidebar";
 import { useStore } from "@/hooks/use-store";
 import { cn } from "@/lib/utils";
 import Providers from "@/lib/providers";
+import { Toaster } from "@/components/ui/toaster"
 
 export default function ContentLayout({
   children
@@ -24,6 +25,7 @@ export default function ContentLayout({
         )}
       >
         {children}
+        <Toaster />
       </main>
     </Providers>
   );
