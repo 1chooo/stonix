@@ -15,18 +15,16 @@ export default function ContentLayout({
   if (!sidebar) return null;
   const { getOpenState, settings } = sidebar;
   return (
-    <>
-      <Providers>
-        <Sidebar />
-        <main
-          className={cn(
-            "min-h-[calc(100vh)] bg-slate-50 dark:bg-slate-900 transition-[margin-left] ease-in-out duration-300",
-            !settings.disabled && (!getOpenState() ? "lg:ml-[90px]" : "lg:ml-72")
-          )}
-        >
-          {children}
-        </main>
-      </Providers>
-    </>
+    <Providers>
+      <Sidebar />
+      <main
+        className={cn(
+          "min-h-[calc(100vh)] bg-slate-50 dark:bg-slate-900 transition-[margin-left] ease-in-out duration-300",
+          !settings.disabled && (!getOpenState() ? "lg:ml-[90px]" : "lg:ml-72")
+        )}
+      >
+        {children}
+      </main>
+    </Providers>
   );
 }
