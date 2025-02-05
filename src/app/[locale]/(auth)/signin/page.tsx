@@ -1,38 +1,25 @@
-"use client";
+"use client"
 
 import Link from "next/link"
-import { useLocale } from "next-intl";
+import { useLocale } from "next-intl"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
-import * as z from "zod";
-import { useAuthContext } from "@/context/auth-context";
-import { useGoogleLogin } from "@/firebase/auth/googleLogin";
-import { useEmailPasswordLogin } from "@/firebase/auth/emailPasswordLogin";
-import { useEmailPasswordRegistration } from "@/firebase/auth/emailPasswordRegistration";
-import { useEmailVerification } from "@/firebase/auth/emailVerificationLink";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useForm } from "react-hook-form"
+import * as z from "zod"
+import { useAuthContext } from "@/context/auth-context"
+import { useGoogleLogin } from "@/firebase/auth/googleLogin"
+import { useEmailPasswordLogin } from "@/firebase/auth/emailPasswordLogin"
+import { useEmailPasswordRegistration } from "@/firebase/auth/emailPasswordRegistration"
+import { useEmailVerification } from "@/firebase/auth/emailVerificationLink"
 
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Shell } from "lucide-react";
+import { Label } from "@/components/ui/label"
+import { Button } from "@/components/ui/button"
+import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Shell } from "lucide-react"
 
 const FormSchemaEmailPassword = z.object({
   email: z
@@ -49,30 +36,25 @@ const FormSchemaEmailPassword = z.object({
     .min(8, {
       message: "Password must be at least 8 characters.",
     }),
-});
+})
 
 export default function Home() {
-  const { user } = useAuthContext();
-  const locale = useLocale();
+  const { user } = useAuthContext()
+  const locale = useLocale()
   const router = useRouter()
 
-  const { googleLogin, isPendingGoogleLogin } = useGoogleLogin();
-  const {
-    emailPasswordLogin,
-    errorEmailPasswordLogin,
-    isPendingEmailPasswordLogin,
-  } = useEmailPasswordLogin();
-  const {
-    errorEmailPasswordRegistration,
-    isPendingEmailPasswordRegistration,
-  } = useEmailPasswordRegistration();
-  const {
-    isEmailVerificationPending,
-  } = useEmailVerification();
+  const { googleLogin, isPendingGoogleLogin } = useGoogleLogin()
+  const { emailPasswordLogin, errorEmailPasswordLogin, isPendingEmailPasswordLogin } = useEmailPasswordLogin()
+  const { errorEmailPasswordRegistration, isPendingEmailPasswordRegistration } = useEmailPasswordRegistration()
+  const { isEmailVerificationPending } = useEmailVerification()
 
   const formEmailPassword = useForm<z.infer<typeof FormSchemaEmailPassword>>({
     resolver: zodResolver(FormSchemaEmailPassword),
-  });
+    defaultValues: {
+      email: "",
+      password: "",
+    },
+  })
 
   useEffect(() => {
     if (user && user.emailVerified) {
@@ -80,31 +62,19 @@ export default function Home() {
     }
   }, [user, locale, router])
 
-  async function onSubmitEmailPasswordLogin(
-    data: z.infer<typeof FormSchemaEmailPassword>
-  ) {
-    await emailPasswordLogin(data.email, data.password);
+  async function onSubmitEmailPasswordLogin(data: z.infer<typeof FormSchemaEmailPassword>) {
+    await emailPasswordLogin(data.email, data.password)
   }
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 -mt-16">
       <div className="w-full max-w-md space-y-8">
-        {user ? (
-          <div className="w-full flex flex-col items-center gap-4">
-            <h1 className="text-center text-xl font-bold">Connected !</h1>
-            <p>
-              Hey <b className="italic underline underline-offset-4">{user.email}</b> 👋
-            </p>
-          </div>
-        ) : (
-
+        {user ? (null) : (
           <div className="w-full">
             <Card className="shadow-xl bg-slate-50 dark:bg-slate-900">
               <CardHeader className="text-center">
                 <CardTitle className="text-xl">Welcome back</CardTitle>
-                <CardDescription>
-                  Login to your Stonix account
-                </CardDescription>
+                <CardDescription>Login to your Stonix account</CardDescription>
               </CardHeader>
 
               <CardContent className=" px-6 pb-6 space-y-6">
@@ -137,9 +107,7 @@ export default function Home() {
                   </div>
 
                   <div className="relative text-center text-sm after:absolute after:inset-0 after:top-1/2 after:z-0 after:flex after:items-center after:border-t after:border-border">
-                    <span className="relative z-10 px-2 text-muted-foreground">
-                      Or continue with
-                    </span>
+                    <span className="relative z-10 px-2 text-muted-foreground">Or continue with</span>
                   </div>
                 </div>
 
@@ -152,7 +120,7 @@ export default function Home() {
                         <FormItem>
                           <FormLabel>Email</FormLabel>
                           <FormControl>
-                            <Input placeholder="m@example.com" {...field} />
+                            <Input placeholder="m@example.com" {...field} value={field.value || ""} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -175,8 +143,12 @@ export default function Home() {
                           <FormItem>
                             <FormControl>
                               <Input
-                                id="password" type="password" placeholder="************" required
+                                id="password"
+                                type="password"
+                                placeholder="************"
+                                required
                                 {...field}
+                                value={field.value || ""}
                               />
                             </FormControl>
                             <FormMessage />
@@ -195,28 +167,19 @@ export default function Home() {
                           isPendingEmailPasswordRegistration ||
                           isEmailVerificationPending
                         }
-                        onClick={formEmailPassword.handleSubmit(
-                          onSubmitEmailPasswordLogin
-                        )}
+                        onClick={formEmailPassword.handleSubmit(onSubmitEmailPasswordLogin)}
                       >
-                        {isPendingEmailPasswordLogin && (
-                          <Shell className="mr-2 h-4 w-4 animate-spin" />
-                        )}
+                        {isPendingEmailPasswordLogin && <Shell className="mr-2 h-4 w-4 animate-spin" />}
                         Sign in
                       </Button>
                     </div>
-                    {(errorEmailPasswordLogin ||
-                      errorEmailPasswordRegistration) && (
-                        <span className="text-red-500 text-center text-sm block mt-4 font-semibold">
-                          {errorEmailPasswordLogin ===
-                            "auth/invalid-login-credentials" &&
-                            "Invalid email or password"}
-                          <br />
-                          {errorEmailPasswordRegistration ===
-                            "auth/email-already-in-use" &&
-                            "This user already exists "}
-                        </span>
-                      )}
+                    {(errorEmailPasswordLogin || errorEmailPasswordRegistration) && (
+                      <span className="text-red-500 text-center text-sm block mt-4 font-semibold">
+                        {errorEmailPasswordLogin === "auth/invalid-login-credentials" && "Invalid email or password"}
+                        <br />
+                        {errorEmailPasswordRegistration === "auth/email-already-in-use" && "This user already exists "}
+                      </span>
+                    )}
                   </form>
                 </Form>
                 <div className="text-center text-sm">
@@ -229,12 +192,12 @@ export default function Home() {
             </Card>
 
             <div className="mt-8 text-balance text-center text-xs text-muted-foreground [&_a]:underline [&_a]:underline-offset-4 [&_a]:hover:text-primary ">
-              By clicking continue, you agree to our <a href="#">Terms of Service</a>{" "}
-              and <a href="#">Privacy Policy</a>.
+              By clicking continue, you agree to our <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+              .
             </div>
           </div>
         )}
       </div>
     </div>
-  );
+  )
 }
