@@ -13,7 +13,6 @@ import {
   FormDescription,
   FormField,
   FormItem,
-  FormLabel,
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
@@ -64,9 +63,10 @@ export default function UsersPage() {
       const userDocRef = doc(db, "users", user.uid);
       const userDoc = await getDoc(userDocRef);
 
+      const defaultUserName = user.displayName || (user.email ? user.email.slice(0, 2) : "JD");
+
       if (userDoc.exists()) {
         const userData = userDoc.data();
-        const defaultUserName = user.displayName || (user.email ? user.email.slice(0, 2) : "JD");
         form.reset({
           email: userData.email || user.email,
           userName: userData.userName || defaultUserName,
@@ -74,11 +74,9 @@ export default function UsersPage() {
           avatar: userData.avatar || "",
         });
       } else {
-        // Firestore 無資料，使用 useAuthContext 的 user
-        const userName = user.displayName || (user.email ? user.email.slice(0, 2) : "JD");
         form.reset({
           email: user.email || "",
-          userName: userName,
+          userName: defaultUserName,
           role: "user",
           avatar: user.photoURL || "",
         });
@@ -112,9 +110,9 @@ export default function UsersPage() {
       });
 
       toast({
-        title: "個人資料已更新",
-        description: "您的帳戶信息已成功更新。",
-        duration: 5000,
+        title: "Successfully Updated",
+        description: "Your account information has been updated.",
+        duration: 3000,
       });
     } catch (error) {
       console.error("更新失敗", error);
@@ -154,69 +152,100 @@ export default function UsersPage() {
                         <Input {...field} type="url" placeholder="輸入頭像 URL" />
                       </div>
                     </FormControl>
-                    <FormDescription>輸入您的頭像圖片 URL。</FormDescription>
+                    <FormDescription>
+                      Input a valid image URL to update your avatar.
+                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
               />
             </CardContent>
           </Card>
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>電子郵件</FormLabel>
-                <FormControl>
-                  <Input {...field} type="email" placeholder="your@email.com" disabled />
-                </FormControl>
-                <FormDescription>這是您的主要聯繫郵箱。</FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="userName"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>用戶名</FormLabel>
-                <FormControl>
-                  <Input {...field} placeholder="Your Name" />
-                </FormControl>
-                <FormDescription>這是您在平台上顯示的名稱。</FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="role"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>角色</FormLabel>
-                <Select onValueChange={field.onChange} value={field.value} disabled>
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="選擇您的角色" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="user">用戶</SelectItem>
-                    <SelectItem value="moderator">版主</SelectItem>
-                    <SelectItem value="admin">管理員</SelectItem>
-                  </SelectContent>
-                </Select>
-                <FormDescription>您在系統中的角色。</FormDescription>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <Button type="submit" disabled={isLoading}>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>E-mail</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input {...field} type="email" placeholder="your@email.com" disabled />
+                    </FormControl>
+                    <FormDescription>
+                      This is your email address associated with your account.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>User Name</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <FormField
+                control={form.control}
+                name="userName"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormControl>
+                      <Input {...field} placeholder="Your Name" />
+                    </FormControl>
+                    <FormDescription>
+                      This is your public username that will be displayed in the app.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </CardContent>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardTitle>Role</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <FormField
+                control={form.control}
+                name="role"
+                render={({ field }) => (
+                  <FormItem>
+                    <Select onValueChange={field.onChange} value={field.value} disabled>
+                      <FormControl>
+                        <SelectTrigger>
+                          <SelectValue placeholder="選擇您的角色" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="user">用戶</SelectItem>
+                        <SelectItem value="moderator">版主</SelectItem>
+                        <SelectItem value="admin">管理員</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <FormDescription>您在系統中的角色。</FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+            </CardContent>
+          </Card>
+
+          <Button
+            className=""
+            type="submit"
+            disabled={isLoading}
+          >
             {isLoading ? "更新中..." : "更新個人資料"}
           </Button>
         </form>
       </Form>
-    </ContentLayout>
+    </ContentLayout >
   );
 }
