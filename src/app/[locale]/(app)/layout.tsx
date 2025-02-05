@@ -4,6 +4,7 @@ import { Sidebar } from "@/components/admin-panel/sidebar";
 import { useSidebar } from "@/hooks/use-sidebar";
 import { useStore } from "@/hooks/use-store";
 import { cn } from "@/lib/utils";
+import Providers from "@/lib/providers";
 
 export default function ContentLayout({
   children
@@ -15,15 +16,17 @@ export default function ContentLayout({
   const { getOpenState, settings } = sidebar;
   return (
     <>
-      <Sidebar />
-      <main
-        className={cn(
-          "min-h-[calc(100vh)] bg-slate-50 dark:bg-slate-900 transition-[margin-left] ease-in-out duration-300",
-          !settings.disabled && (!getOpenState() ? "lg:ml-[90px]" : "lg:ml-72")
-        )}
-      >
+      <Providers>
+        <Sidebar />
+        <main
+          className={cn(
+            "min-h-[calc(100vh)] bg-slate-50 dark:bg-slate-900 transition-[margin-left] ease-in-out duration-300",
+            !settings.disabled && (!getOpenState() ? "lg:ml-[90px]" : "lg:ml-72")
+          )}
+        >
           {children}
-      </main>
+        </main>
+      </Providers>
     </>
   );
 }

@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { ContentLayout } from "@/components/admin-panel/content-layout";
 import { useLocale } from "next-intl";
@@ -5,18 +7,25 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { NetworkPieChart } from "@/components/chart/network-pie-chart"
 import { NetworkLineChart } from "@/components/chart/network-line-chart"
+import { useAuthContext } from "@/context/auth-context";
 
 export default function DashboardPage() {
   const locale = useLocale();
+  const { user } = useAuthContext();
 
   return (
     <ContentLayout title="Dashboard">
-      <div className="text-sm text-center justify-center my-4">
-        <Link href={`/${locale}/signin`} className="text-sm underline dark:text-sky-400 text-sky-500 font-semibold">
-          Sign in
-        </Link>{' '}
-        to save focus history and tasks.
-      </div>
+      {user ? (
+        null
+      ) :
+        <div className="text-sm text-center justify-center my-4">
+          <Link href={`/${locale}/signin`} className="text-sm underline dark:text-sky-400 text-sky-500 font-semibold">
+            Sign in
+          </Link>{' '}
+          to save focus history and tasks.
+        </div>
+      }
+
 
       {/* Main Content */}
       <div className="flex-1 space-y-6 p-6">
@@ -59,7 +68,7 @@ export default function DashboardPage() {
             <CardContent>
               <div className="text-3xl font-bold">$2,808,491.15</div>
               <div className="text-sm text-green-500">+$1,553.43 (+0.9%) vs last month</div>
-            <NetworkLineChart />
+              <NetworkLineChart />
             </CardContent>
           </Card>
           <NetworkPieChart />
