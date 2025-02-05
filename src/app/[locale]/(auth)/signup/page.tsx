@@ -50,6 +50,10 @@ export default function SignUpPage() {
 
   const formEmailPassword = useForm<z.infer<typeof FormSchemaEmailPassword>>({
     resolver: zodResolver(FormSchemaEmailPassword),
+    defaultValues: {
+      email: "",
+      password: "",
+    },
   })
 
   useEffect(() => {
@@ -118,7 +122,7 @@ export default function SignUpPage() {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="m@example.com" required {...field} />
+                          <Input placeholder="m@example.com" required {...field} value={field.value || ""} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -131,7 +135,13 @@ export default function SignUpPage() {
                       <FormItem>
                         <FormLabel>Password</FormLabel>
                         <FormControl>
-                          <Input type="password" placeholder="************" required {...field} />
+                          <Input
+                            type="password"
+                            placeholder="************"
+                            required
+                            {...field}
+                            value={field.value || ""}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
