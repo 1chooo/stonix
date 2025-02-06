@@ -46,7 +46,7 @@ export default function Home() {
   const { googleLogin, isPendingGoogleLogin } = useGoogleLogin()
   const { emailPasswordLogin, errorEmailPasswordLogin, isPendingEmailPasswordLogin } = useEmailPasswordLogin()
   const { errorEmailPasswordRegistration, isPendingEmailPasswordRegistration } = useEmailPasswordRegistration()
-  const { isEmailVerificationPending, sendEmailVerificationLink } = useEmailVerification()
+  const { isEmailVerificationSent, isEmailVerificationPending, errorVerificationLink, sendEmailVerificationLink } = useEmailVerification()
 
   const formEmailPassword = useForm<z.infer<typeof FormSchemaEmailPassword>>({
     resolver: zodResolver(FormSchemaEmailPassword),
@@ -77,19 +77,37 @@ export default function Home() {
   return (
     <div className="min-h-screen flex items-center justify-center p-4 -mt-16">
       <div className="w-full max-w-md space-y-8">
-        {user?.emailVerified ? (
-          <>
-            <p className="text-red-600 text-md font-semibold">Your email is not verified.</p>
-            <Button
-              disabled={
-                isPendingEmailPasswordLogin || isPendingEmailPasswordRegistration || isEmailVerificationPending
-              }
-              onClick={handleSendVerificationEmail}
-            >
-              {isEmailVerificationPending && <Shell className="mr-2 h-4 w-4 animate-spin" />}
-              Send verification email
-            </Button>
-          </>
+        {user ? (
+          <div className="w-full flex flex-col items-center gap-4">
+            <h1 className="text-center text-xl font-bold">Connected !</h1>
+            <p>
+              Hey <b className="italic underline underline-offset-4">{user.email}</b> 👋
+            </p>
+            {user.emailVerified ? (
+              <p className="text-green-900 text-md font-semibold">
+                Your email is verified. Redirecting to dashboard...
+              </p>
+            ) : (
+              <>
+                <p className="text-red-600 text-md font-semibold">Your email is not verified.</p>
+                <Button
+                  disabled={
+                    isPendingEmailPasswordLogin || isPendingEmailPasswordRegistration || isEmailVerificationPending
+                  }
+                  onClick={handleSendVerificationEmail}
+                >
+                  {isEmailVerificationPending && <Shell className="mr-2 h-4 w-4 animate-spin" />}
+                  Send verification email
+                </Button>
+              </>
+            )}
+            {isEmailVerificationSent && (
+              <p className="text-green-900 text-md font-semibold">
+                The email was successfully sent, check your email box to confirm
+              </p>
+            )}
+            {errorVerificationLink && <p className="text-red-900 text-md font-semibold">{errorVerificationLink}</p>}
+          </div>
         ) : (
           <div className="w-full">
             <Card className="shadow-xl bg-slate-50 dark:bg-slate-900">
