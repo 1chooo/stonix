@@ -5,7 +5,7 @@ import Link from "next/link"
 import { Check } from "lucide-react"
 import { useTranslations } from "next-intl";
 
-function Feature({ name }: { name: string }) {
+function Feature({ name }: { readonly name: string }) {
   return (
     <li className="flex items-center gap-5 fill-primary">
       <Check />
@@ -14,7 +14,7 @@ function Feature({ name }: { name: string }) {
   )
 }
 
-function Features({ names }: { names: string[] }) {
+function Features({ names }: { readonly names: string[] }) {
   return (
     <ul>
       {names.map((name) => (
@@ -28,13 +28,14 @@ const starter = [
   "Stock Visualizer",
   "US/TW Stock Market",
 ]
+
 const pro = [
   "Everything in Starter",
   "Daily / Weekly / Yearly Stats",
   "Priority Support",
 ]
 
-function Pricing() {
+export default function Pricing() {
   const t = useTranslations("Pricing");
 
   return (
@@ -81,5 +82,3 @@ function Pricing() {
     </div>
   )
 }
-
-export default Pricing

@@ -33,8 +33,7 @@ import {
 } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { doc, getDoc, setDoc } from "firebase/firestore";
-import { auth } from "@/firebase/config";
-import { db } from "@/firebase/config";
+import { auth, db } from "@/firebase/config";
 import { useToast } from "@/hooks/use-toast";
 
 const formSchema = z.object({
