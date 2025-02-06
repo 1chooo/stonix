@@ -46,7 +46,7 @@ export default function Home() {
   const { googleLogin, isPendingGoogleLogin } = useGoogleLogin()
   const { emailPasswordLogin, errorEmailPasswordLogin, isPendingEmailPasswordLogin } = useEmailPasswordLogin()
   const { errorEmailPasswordRegistration, isPendingEmailPasswordRegistration } = useEmailPasswordRegistration()
-  const { isEmailVerificationPending } = useEmailVerification()
+  const { isEmailVerificationPending, sendEmailVerificationLink } = useEmailVerification()
 
   const formEmailPassword = useForm<z.infer<typeof FormSchemaEmailPassword>>({
     resolver: zodResolver(FormSchemaEmailPassword),
@@ -57,7 +57,7 @@ export default function Home() {
   })
 
   useEffect(() => {
-    if (user && user.emailVerified) {
+    if (user?.emailVerified) {
       router.push(`/${locale}/dashboard`)
     }
   }, [user, locale, router])
@@ -66,10 +66,31 @@ export default function Home() {
     await emailPasswordLogin(data.email, data.password)
   }
 
+  const handleSendVerificationEmail = async () => {
+    try {
+      await sendEmailVerificationLink()
+    } catch (error) {
+      console.error(error)
+    }
+  }
+
   return (
     <div className="min-h-screen flex items-center justify-center p-4 -mt-16">
       <div className="w-full max-w-md space-y-8">
-        {user ? (null) : (
+        {user?.emailVerified ? (
+          <>
+            <p className="text-red-600 text-md font-semibold">Your email is not verified.</p>
+            <Button
+              disabled={
+                isPendingEmailPasswordLogin || isPendingEmailPasswordRegistration || isEmailVerificationPending
+              }
+              onClick={handleSendVerificationEmail}
+            >
+              {isEmailVerificationPending && <Shell className="mr-2 h-4 w-4 animate-spin" />}
+              Send verification email
+            </Button>
+          </>
+        ) : (
           <div className="w-full">
             <Card className="shadow-xl bg-slate-50 dark:bg-slate-900">
               <CardHeader className="text-center">
