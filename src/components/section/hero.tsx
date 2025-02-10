@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { cva } from "class-variance-authority"
-import { motion } from "framer-motion";
+import { motion } from "motion/react"
 import { useEffect, useState } from "react";
 import { ArrowUpRightIcon } from "@primer/octicons-react";
 import { useTranslations } from 'next-intl';
@@ -101,7 +101,7 @@ const buttonVariants = cva(
   }
 )
 
-function Hero() {
+export default function Hero() {
   const t = useTranslations("HomePage");
   const locale = useLocale();
 
@@ -169,5 +169,3 @@ function Hero() {
     </div>
   )
 }
-
-export default Hero
