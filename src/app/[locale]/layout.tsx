@@ -5,6 +5,8 @@ import { setRequestLocale, getMessages } from 'next-intl/server';
 import ThemeProvider from "@/components/theme/theme-provider";
 import { routing } from '@/i18n/routing';
 import { inter } from "@/app/font";
+import { GoogleTagManager } from '@next/third-parties/google'
+
 
 import "@/app/globals.css";
 
@@ -61,6 +63,9 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   return (
     <html lang={locale} className={`${inter.variable}`} suppressHydrationWarning>
+      <GoogleTagManager
+        gtmId={process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID ?? ""}
+      />
       <body>
         <ThemeProvider
           attribute="class"
