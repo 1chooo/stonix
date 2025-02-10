@@ -161,7 +161,7 @@ const columns: ColumnDef<Payment>[] = [
 ]
 
 
-export default function TagsPage() {
+export default function InvestmentsPage() {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
@@ -213,7 +213,7 @@ export default function TagsPage() {
   })
 
   return (
-    <ContentLayout title="Tags">
+    <ContentLayout title="Investments">
       <div className="w-full">
         <div className="flex items-center py-4">
           <Input

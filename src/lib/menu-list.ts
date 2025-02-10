@@ -1,5 +1,5 @@
 import {
-  Tag,
+  ChartNoAxesCombined,
   Users,
   Settings,
   Bookmark,
@@ -46,6 +46,16 @@ export function getMenuList(pathname: string): Group[] {
       groupLabel: "Portfolio",
       menus: [
         {
+          href: "investments",
+          label: "Investments",
+          icon: ChartNoAxesCombined
+        },
+        {
+          href: "stats",
+          label: "Stats",
+          icon: ChartColumnBig
+        },
+        {
           href: "",
           label: "Posts",
           icon: SquarePen,
@@ -65,16 +75,6 @@ export function getMenuList(pathname: string): Group[] {
           label: "Categories",
           icon: Bookmark
         },
-        {
-          href: "stats",
-          label: "Stats",
-          icon: ChartColumnBig
-        },
-        {
-          href: "tags",
-          label: "Tags",
-          icon: Tag
-        }
       ]
     },
     {
