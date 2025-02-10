@@ -79,8 +79,8 @@ function HomeHeader() {
             <DropdownMenuContent className="w-56" align="end" forceMount>
               <DropdownMenuGroup>
                 <DropdownMenuItem className="hover:cursor-pointer" asChild>
-                  <Link href={`/${locale}/#`} className="flex items-center">
-                    Guestbook
+                  <Link href={`/${locale}/tools`} className="flex items-center">
+                    Tools
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="hover:cursor-pointer" asChild>
@@ -106,7 +106,7 @@ function HomeHeader() {
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <div className="flex-shrink-0 ">
+        <div className="flex-shrink-0 lg:w-[300px]">
           <Link
             href={`/${locale}/`}
             aria-label="Home"
@@ -131,10 +131,10 @@ function HomeHeader() {
           <div className="gap-5 text-lg font-medium hidden lg:flex">
             <Link
               className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10"
-              href={`/${locale}/#`}
+              href={`/${locale}/tools`}
               aria-label="Guestbook"
             >
-              Guestbook
+              Tools
             </Link>
             <Link href={`/${locale}/pricing`} className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10">
               Pricing
@@ -144,7 +144,7 @@ function HomeHeader() {
             </Link>
           </div>
         </nav>
-        <div className="flex-shrink-0 flex items-center justify-end space-x-2 w-[200px]">
+        <div className="flex-shrink-0 flex items-center justify-end space-x-2 lg:w-[300px]">
           <LanguageToggle />
           <Button
             variant="ghost"
