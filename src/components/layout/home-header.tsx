@@ -116,7 +116,7 @@ function HomeHeader() {
             <Image
               className="rounded-full"
               src="/favicon.ico"
-              alt="Logo of Refinaid"
+              alt="Logo of Stonix"
               quality={100}
               width={40}
               height={40}
@@ -151,7 +151,7 @@ function HomeHeader() {
             size="sm"
             aria-label="GitHub"
             className="hidden sm:block"
-            onClick={() => window.open('https://github.com/1chooo/refinaid', '_blank')}
+            onClick={() => window.open('https://github.com/1chooo/stonix', '_blank')}
           >
             <Github />
           </Button>

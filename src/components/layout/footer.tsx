@@ -13,7 +13,7 @@ const Footer = () => {
         <Image
           className="flex items-center gap-2 text-xl font-bold"
           src="/favicon.ico"
-          alt="Logo of Refinaid"
+          alt="Logo of Stonix"
           quality={100}
           width={48}
           height={48}
@@ -50,14 +50,14 @@ const Footer = () => {
             href="/#"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white">Blog</Link>
           <Link
-            href="https://github.com/1chooo/refinaid/issues"
+            href="https://github.com/1chooo/stonix/issues"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
             target='_blank'
             rel='noreferrer noopener'
             aria-label="Feedback"
           >Feedback</Link>
           <Link
-            href="https://refinaid-docs.vercel.app/"
+            href="/#"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
             target='_blank'
             rel='noreferrer noopener'
