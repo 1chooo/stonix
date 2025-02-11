@@ -6,15 +6,9 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { AnimatedShinyText } from "@/components/magicui/animated-shiny-text";
-import { Button } from "@/components/ui/button"
-import { Suspense } from "react"
-import { GitHubStars, GitHubStarsFallback } from "@/components/section/github-stars"
-import { ArrowUpRightIcon } from "@primer/octicons-react"
-import { useLocale } from "next-intl"
-
+import GetStarted from "@/components/section/get-started";
 
 export default function HomePage() {
-  const locale = useLocale()
   return (
     <>
       <Gradient />
@@ -44,31 +38,7 @@ export default function HomePage() {
         </div>
         <div className="mt-10 flex flex-col items-center justify-center">
           <Hero />
-          <div className="my-10 grid gap-2 sm:grid-cols-2">
-            <div className="text-center sm:block sm:text-right">
-              <Button className="w-48 rounded-full sm:w-auto" asChild>
-                <Link href={`/${locale}/dashboard`}>
-                  Get Started
-                  <ArrowUpRightIcon className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </div>
-            <div className="text-center sm:block sm:text-left">
-              <Button variant="outline" className="w-48 rounded-full sm:w-auto" asChild>
-                <Link
-                  href="https://github.com/1chooo/stonix"
-                  target="_blank"
-                  rel="noreferrer"
-                  aria-label="Star on GitHub"
-                >
-                  Star on GitHub{" "}
-                  <Suspense fallback={<GitHubStarsFallback />}>
-                    <GitHubStars />
-                  </Suspense>
-                </Link>
-              </Button>
-            </div>
-          </div>
+          <GetStarted />
         </div>
       </main>
     </>
