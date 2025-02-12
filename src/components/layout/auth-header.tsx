@@ -6,10 +6,8 @@ import Image from "next/image"
 import { useLocale } from "next-intl";
 import { LanguageToggle } from "@/components/language-toggle"
 import { ThemeToggle } from "@/components/theme/theme-toggle"
-import { Button } from "@/components/ui/button"
-import { Github } from "lucide-react"
 
-function AuthHeader() {
+export default function AuthHeader() {
   const locale = useLocale();
 
   return (
@@ -36,21 +34,9 @@ function AuthHeader() {
         </Link>
         <div className="flex-shrink-0 flex items-center justify-end space-x-4">
           <LanguageToggle />
-          <Button
-            variant="ghost"
-            size="sm"
-            aria-label="GitHub"
-            className="hidden sm:block"
-            onClick={() => window.open('https://github.com/1chooo/stonix', '_blank')}
-          >
-            <Github />
-          </Button>
           <ThemeToggle />
         </div>
       </div>
     </header>
-  )
-}
-
-export default AuthHeader
-
+  );
+};

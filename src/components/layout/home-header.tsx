@@ -5,7 +5,7 @@ import Link from "next/link"
 import React from "react"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Menu, Github } from "lucide-react"
+import { Menu } from "lucide-react"
 import {
   Tooltip,
   TooltipContent,
@@ -55,7 +55,7 @@ const buttonVariants = cva(
   },
 )
 
-function HomeHeader() {
+export default function HomeHeader() {
   const locale = useLocale();
 
   return (
@@ -146,15 +146,6 @@ function HomeHeader() {
         </nav>
         <div className="flex-shrink-0 flex items-center justify-end space-x-2 lg:w-[300px]">
           <LanguageToggle />
-          <Button
-            variant="ghost"
-            size="sm"
-            aria-label="GitHub"
-            className="hidden sm:block"
-            onClick={() => window.open('https://github.com/1chooo/stonix', '_blank')}
-          >
-            <Github />
-          </Button>
           <ThemeToggle />
           <Link href={`/${locale}/dashboard`} className={buttonVariants()}>
             Get Started
@@ -162,7 +153,5 @@ function HomeHeader() {
         </div>
       </div>
     </header>
-  )
-}
-
-export default HomeHeader
+  );
+};
