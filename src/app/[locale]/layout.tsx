@@ -6,6 +6,7 @@ import ThemeProvider from "@/components/theme/theme-provider";
 import { routing } from '@/i18n/routing';
 import { inter } from "@/app/font";
 import { GoogleTagManager } from '@next/third-parties/google'
+import { WebVitals } from "@/components/web-vitals"
 
 
 import "@/app/globals.css";
@@ -63,8 +64,9 @@ export default async function LocaleLayout({
   const messages = await getMessages();
   return (
     <html lang={locale} className={`${inter.variable}`} suppressHydrationWarning>
-      <GoogleTagManager
-        gtmId={process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID ?? ""}
+      <WebVitals
+        key="Web Vitals"
+        gaId={process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID ?? ""}
       />
       <body>
         <ThemeProvider
@@ -78,6 +80,9 @@ export default async function LocaleLayout({
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
+      <GoogleTagManager
+        gtmId={process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID ?? ""}
+      />
     </html>
   );
 };
