@@ -5,9 +5,11 @@ import { setRequestLocale, getMessages } from 'next-intl/server';
 import ThemeProvider from "@/components/theme/theme-provider";
 import { routing } from '@/i18n/routing';
 import { inter } from "@/app/font";
-import { GoogleTagManager } from '@next/third-parties/google'
-import { WebVitals } from "@/components/web-vitals"
-
+import {
+  GoogleAnalytics,
+  GoogleTagManager,
+} from "@next/third-parties/google";
+import { WebVitals } from "@/components/web-vitals";
 
 import "@/app/globals.css";
 
@@ -66,7 +68,7 @@ export default async function LocaleLayout({
     <html lang={locale} className={`${inter.variable}`} suppressHydrationWarning>
       <WebVitals
         key="Web Vitals"
-        gaId={process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID ?? ""}
+        gaId={process.env.NEXT_PUBLIC_GA_ID ?? ""}
       />
       <body>
         <ThemeProvider
@@ -80,9 +82,8 @@ export default async function LocaleLayout({
           </NextIntlClientProvider>
         </ThemeProvider>
       </body>
-      <GoogleTagManager
-        gtmId={process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID ?? ""}
-      />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID ?? ""} />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_ID ?? ""} />
     </html>
   );
 };
