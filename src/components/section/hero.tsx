@@ -1,5 +1,3 @@
-"use client";
-
 import { useTranslations } from "next-intl";
 
 export default function Hero() {
@@ -19,8 +17,3 @@ export default function Hero() {
         </h2>
       </div>
       <p className="mx-auto max-w-2xl text-center text-lg leading-6 text-muted-foreground md:text-xl">
-        {t("description")}
-      </p>
-    </div>
-  );
-}
