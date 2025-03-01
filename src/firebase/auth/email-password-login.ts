@@ -16,7 +16,7 @@ export const useEmailPasswordLogin = () => {
       if (!res.user) {
         return;
       }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       setErrorEmailPasswordLogin(error.code);
       await signOut(auth);

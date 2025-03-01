@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { useLocale } from "next-intl";
 
 /**
  * @see https://github.com/amannn/next-intl/tree/main/examples/example-app-router
@@ -8,7 +8,7 @@ import { useLocale } from 'next-intl';
 export default function LocaleNotFoundPage() {
   const locale = useLocale();
   return (
-    <div className="flex h-full flex-col items-center justify-center gap-10 mt-24">
+    <div className="mt-24 flex h-full flex-col items-center justify-center gap-10">
       <div className="flex flex-col items-center gap-2">
         <h1 className="flex items-center gap-2 text-9xl font-bold text-primary">
           404
@@ -19,9 +19,7 @@ export default function LocaleNotFoundPage() {
         </h1>
       </div>
       <Link href={`/${locale}`}>
-        <Button>
-          Home
-        </Button>
+        <Button>Home</Button>
       </Link>
     </div>
   );

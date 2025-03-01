@@ -1,9 +1,9 @@
-import React from "react"
+import React from "react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button"
-import { Suspense } from "react"
-import { ArrowUpRightIcon } from "@primer/octicons-react"
-import { useLocale } from "next-intl"
+import { Button } from "@/components/ui/button";
+import { Suspense } from "react";
+import { ArrowUpRightIcon } from "@primer/octicons-react";
+import { useLocale } from "next-intl";
 
 import { Badge } from "@/components/ui/badge";
 import { getGitHubStars } from "@/lib/github";
@@ -32,7 +32,7 @@ export function GitHubStarsFallback() {
 }
 
 export default function GetStarted() {
-  const locale = useLocale()
+  const locale = useLocale();
 
   return (
     <div className="my-10 grid gap-2 sm:grid-cols-2">
@@ -45,7 +45,11 @@ export default function GetStarted() {
         </Button>
       </div>
       <div className="text-center sm:block sm:text-left">
-        <Button variant="outline" className="w-48 rounded-full sm:w-auto" asChild>
+        <Button
+          variant="outline"
+          className="w-48 rounded-full sm:w-auto"
+          asChild
+        >
           <Link
             href="https://github.com/1chooo/stonix"
             target="_blank"
@@ -60,5 +64,5 @@ export default function GetStarted() {
         </Button>
       </div>
     </div>
-  )
+  );
 }

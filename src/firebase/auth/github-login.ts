@@ -3,7 +3,9 @@ import { auth } from "@/firebase/config";
 import { GithubAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
 export const useGithubLogin = () => {
-  const [errorGithubLogin, setErrorGithubLogin] = useState<boolean | null>(null);
+  const [errorGithubLogin, setErrorGithubLogin] = useState<boolean | null>(
+    null,
+  );
   const [isPendingGithubLogin, setIsPendingGithubLogin] = useState(false);
   const provider = new GithubAuthProvider();
 
@@ -16,7 +18,7 @@ export const useGithubLogin = () => {
       if (!res) {
         return;
       }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       setErrorGithubLogin(error.code);
       await signOut(auth);

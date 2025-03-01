@@ -1,90 +1,96 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import {
-  Area,
-  AreaChart,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-} from "recharts"
-import { DollarSign } from "lucide-react"
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+import { useState, useEffect } from "react";
+import { Area, AreaChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import { DollarSign } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import {
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
   ChartLegend,
   ChartLegendContent,
-} from "@/components/ui/chart"
-import { Alert, AlertDescription } from "@/components/ui/alert"
+} from "@/components/ui/chart";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 
 interface CalculationResult {
-  year: number
-  contributed: number
-  total: number
+  year: number;
+  contributed: number;
+  total: number;
 }
 
 interface InputError {
-  field: string
-  message: string
+  field: string;
+  message: string;
 }
 
 export default function CompoundInterestCalculatorPage() {
-  const [initial, setInitial] = useState("")
-  const [monthly, setMonthly] = useState("")
-  const [years, setYears] = useState("")
-  const [rate, setRate] = useState("")
-  const [results, setResults] = useState<CalculationResult[]>([])
-  const [totalValue, setTotalValue] = useState<number | null>(null)
-  const [errors, setErrors] = useState<InputError[]>([])
+  const [initial, setInitial] = useState("");
+  const [monthly, setMonthly] = useState("");
+  const [years, setYears] = useState("");
+  const [rate, setRate] = useState("");
+  const [results, setResults] = useState<CalculationResult[]>([]);
+  const [totalValue, setTotalValue] = useState<number | null>(null);
+  const [errors, setErrors] = useState<InputError[]>([]);
 
   useEffect(() => {
-    calculateCompoundInterest()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [initial, monthly, years, rate]) //This line was already correct.  No changes needed.
+    calculateCompoundInterest();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [initial, monthly, years, rate]); //This line was already correct.  No changes needed.
 
   const validateInputs = (): boolean => {
-    const newErrors: InputError[] = []
+    const newErrors: InputError[] = [];
 
     if (initial === "" || isNaN(Number(initial)) || Number(initial) < 0) {
-      newErrors.push({ field: "initial", message: "Initial investment must be a non-negative number" })
+      newErrors.push({
+        field: "initial",
+        message: "Initial investment must be a non-negative number",
+      });
     }
     if (monthly === "" || isNaN(Number(monthly)) || Number(monthly) < 0) {
-      newErrors.push({ field: "monthly", message: "Monthly contribution must be a non-negative number" })
+      newErrors.push({
+        field: "monthly",
+        message: "Monthly contribution must be a non-negative number",
+      });
     }
-    if (years === "" || isNaN(Number(years)) || !Number.isInteger(Number(years)) || Number(years) <= 0) {
-      newErrors.push({ field: "years", message: "Years must be a positive integer" })
+    if (
+      years === "" ||
+      isNaN(Number(years)) ||
+      !Number.isInteger(Number(years)) ||
+      Number(years) <= 0
+    ) {
+      newErrors.push({
+        field: "years",
+        message: "Years must be a positive integer",
+      });
     }
     if (rate === "" || isNaN(Number(rate)) || Number(rate) < 0) {
-      newErrors.push({ field: "rate", message: "Interest rate must be a non-negative number" })
+      newErrors.push({
+        field: "rate",
+        message: "Interest rate must be a non-negative number",
+      });
     }
 
-    setErrors(newErrors)
-    return newErrors.length === 0
-  }
+    setErrors(newErrors);
+    return newErrors.length === 0;
+  };
 
   const calculateCompoundInterest = () => {
     if (!validateInputs()) {
-      setResults([])
-      setTotalValue(null)
-      return
+      setResults([]);
+      setTotalValue(null);
+      return;
     }
 
-    const initialAmount = Number.parseFloat(initial) || 0
-    const monthlyContribution = Number.parseFloat(monthly) || 0
-    const numberOfYears = Number.parseInt(years) || 0
-    const interestRate = Number.parseFloat(rate) || 0
+    const initialAmount = Number.parseFloat(initial) || 0;
+    const monthlyContribution = Number.parseFloat(monthly) || 0;
+    const numberOfYears = Number.parseInt(years) || 0;
+    const interestRate = Number.parseFloat(rate) || 0;
 
-    const calculations: CalculationResult[] = []
-    let totalContributed = initialAmount
+    const calculations: CalculationResult[] = [];
+    let totalContributed = initialAmount;
 
     for (let year = 0; year <= numberOfYears; year++) {
       if (year === 0) {
@@ -92,29 +98,30 @@ export default function CompoundInterestCalculatorPage() {
           year,
           contributed: initialAmount,
           total: initialAmount,
-        })
-        continue
+        });
+        continue;
       }
 
-      const previousTotal = calculations[year - 1].total
-      const yearlyContribution = monthlyContribution * 12
-      totalContributed += yearlyContribution
+      const previousTotal = calculations[year - 1].total;
+      const yearlyContribution = monthlyContribution * 12;
+      totalContributed += yearlyContribution;
 
-      const totalWithInterest = (previousTotal + yearlyContribution) * (1 + interestRate / 100)
+      const totalWithInterest =
+        (previousTotal + yearlyContribution) * (1 + interestRate / 100);
 
       calculations.push({
         year,
         contributed: totalContributed,
         total: totalWithInterest,
-      })
+      });
     }
 
-    setResults(calculations)
-    setTotalValue(calculations[calculations.length - 1].total)
-  }
+    setResults(calculations);
+    setTotalValue(calculations[calculations.length - 1].total);
+  };
 
   return (
-    <main className='relative mx-auto mb-16 max-w-4xl px-8 py-24'>
+    <main className="relative mx-auto mb-16 max-w-4xl px-8 py-24">
       <div className="grid gap-6 lg:grid-cols-[1fr_2fr]">
         <Card className="bg-slate-50 dark:bg-slate-900">
           <CardHeader>
@@ -149,11 +156,21 @@ export default function CompoundInterestCalculatorPage() {
             </div>
             <div className="grid gap-2">
               <Label htmlFor="years">Years to grow</Label>
-              <Input id="years" placeholder="0" value={years} onChange={(e) => setYears(e.target.value)} />
+              <Input
+                id="years"
+                placeholder="0"
+                value={years}
+                onChange={(e) => setYears(e.target.value)}
+              />
             </div>
             <div className="grid gap-2">
               <Label htmlFor="rate">Annual interest rate (%)</Label>
-              <Input id="rate" placeholder="0.0" value={rate} onChange={(e) => setRate(e.target.value)} />
+              <Input
+                id="rate"
+                placeholder="0.0"
+                value={rate}
+                onChange={(e) => setRate(e.target.value)}
+              />
             </div>
             {errors.length > 0 && (
               <Alert variant="destructive">
@@ -212,7 +229,10 @@ export default function CompoundInterestCalculatorPage() {
                   }}
                 >
                   <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="year" tickFormatter={(value) => `Year ${value}`} />
+                  <XAxis
+                    dataKey="year"
+                    tickFormatter={(value) => `Year ${value}`}
+                  />
                   <YAxis
                     tickFormatter={(value) =>
                       `$${value.toLocaleString(undefined, {
@@ -250,4 +270,4 @@ export default function CompoundInterestCalculatorPage() {
       </div>
     </main>
   );
-};
+}

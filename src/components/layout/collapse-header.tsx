@@ -2,20 +2,18 @@
 
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 
-import {
-  SidebarTrigger,
-} from "@/components/ui/sidebar"
-import { LanguageToggle } from "@/components/language-toggle"
-import { ThemeToggle } from "@/components/theme/theme-toggle"
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { LanguageToggle } from "@/components/language-toggle";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-  TooltipProvider
+  TooltipProvider,
 } from "@/components/ui/tooltip";
 import {
   DropdownMenu,
@@ -25,14 +23,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import { useAuthContext } from "@/context/auth-context";
 import { useLogout } from "@/firebase/auth/logout";
-import {
-  LogIn,
-  User,
-  House,
-} from "lucide-react";
+import { LogIn, User, House } from "lucide-react";
 
 interface AppHeaderProps {
   title: string;
@@ -45,9 +39,9 @@ export function CollapseHeader({ title }: AppHeaderProps) {
 
   return (
     <header className="sticky top-0 z-10 w-full bg-background/95 shadow backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:shadow-secondary">
-      <div className="mx-4 sm:mx-8 flex h-14 items-center">
+      <div className="mx-4 flex h-14 items-center sm:mx-8">
         <div className="flex items-center">
-          <SidebarTrigger className="lg:-ml-4 md:-ml-2 -ml-1" />
+          <SidebarTrigger className="-ml-1 md:-ml-2 lg:-ml-4" />
           <Separator orientation="vertical" className="ml-2 mr-2 h-4" />
           <h1>{title}</h1>
         </div>
@@ -68,7 +62,7 @@ export function CollapseHeader({ title }: AppHeaderProps) {
                           >
                             <Avatar className="h-8 w-8">
                               <AvatarImage src="#" alt="Avatar" />
-                              <AvatarFallback className="uppercase bg-transparent">
+                              <AvatarFallback className="bg-transparent uppercase">
                                 {user.email?.charAt(0)}
                                 {user.email?.charAt(1)}
                               </AvatarFallback>
@@ -98,9 +92,12 @@ export function CollapseHeader({ title }: AppHeaderProps) {
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
                       <DropdownMenuItem asChild>
-                        <Link href={`/${locale}`} className="flex items-center justify-between w-full hover:cursor-pointer">
+                        <Link
+                          href={`/${locale}`}
+                          className="flex w-full items-center justify-between hover:cursor-pointer"
+                        >
                           <span>Home</span>
-                          <House className="w-4 h-4 ml-2 text-muted-foreground" />
+                          <House className="ml-2 h-4 w-4 text-muted-foreground" />
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem className="p-2 focus:bg-transparent">
@@ -108,8 +105,8 @@ export function CollapseHeader({ title }: AppHeaderProps) {
                           href={`/${locale}/dashboard`}
                           className="flex w-full items-center justify-center rounded-md bg-destructive px-3 py-2 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/10"
                           onClick={(e) => {
-                            e.preventDefault()
-                            logout()
+                            e.preventDefault();
+                            logout();
                           }}
                         >
                           Log Out
@@ -120,7 +117,7 @@ export function CollapseHeader({ title }: AppHeaderProps) {
                 </DropdownMenu>
               </div>
             </div>
-          ) :
+          ) : (
             <DropdownMenu>
               <TooltipProvider disableHoverableContent>
                 <Tooltip delayDuration={100}>
@@ -146,21 +143,27 @@ export function CollapseHeader({ title }: AppHeaderProps) {
               <DropdownMenuContent align="end" forceMount>
                 <DropdownMenuGroup>
                   <DropdownMenuItem asChild>
-                    <Link href={`/${locale}/signin`} className="flex items-center justify-between w-full hover:cursor-pointer">
+                    <Link
+                      href={`/${locale}/signin`}
+                      className="flex w-full items-center justify-between hover:cursor-pointer"
+                    >
                       <span>Sign In</span>
-                      <LogIn className="w-4 h-4 ml-2 text-muted-foreground" />
+                      <LogIn className="ml-2 h-4 w-4 text-muted-foreground" />
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href={`/${locale}`} className="flex items-center justify-between w-full hover:cursor-pointer">
+                    <Link
+                      href={`/${locale}`}
+                      className="flex w-full items-center justify-between hover:cursor-pointer"
+                    >
                       <span>Home</span>
-                      <House className="w-4 h-4 ml-2 text-muted-foreground" />
+                      <House className="ml-2 h-4 w-4 text-muted-foreground" />
                     </Link>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-          }
+          )}
         </div>
       </div>
     </header>

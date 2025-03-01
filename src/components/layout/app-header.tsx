@@ -3,11 +3,7 @@
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { useState, useEffect } from "react";
-import {
-  LogIn,
-  User,
-  House,
-} from "lucide-react";
+import { LogIn, User, House } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -15,7 +11,7 @@ import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-  TooltipProvider
+  TooltipProvider,
 } from "@/components/ui/tooltip";
 import {
   DropdownMenu,
@@ -25,10 +21,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import { SheetMenu } from "@/components/admin-panel/sheet-menu";
-import { LanguageToggle } from "@/components/language-toggle"
-import { ThemeToggle } from "@/components/theme/theme-toggle"
+import { LanguageToggle } from "@/components/language-toggle";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 
 import { useAuthContext } from "@/context/auth-context";
 import { doc, getDoc } from "firebase/firestore";
@@ -59,7 +55,8 @@ export function AppHeader({ title }: AppHeaderProps) {
 
       if (userDoc.exists()) {
         const data = userDoc.data();
-        const userName = data.userName || (data.email ? data.email.slice(0, 2) : "JD");
+        const userName =
+          data.userName || (data.email ? data.email.slice(0, 2) : "JD");
         setUserData({
           email: data.email || user.email,
           userName: userName,
@@ -68,7 +65,8 @@ export function AppHeader({ title }: AppHeaderProps) {
         });
       } else {
         // Firestore 無資料，使用 useAuthContext 的 user
-        const userName = user.displayName || (user.email ? user.email.slice(0, 2) : "JD");
+        const userName =
+          user.displayName || (user.email ? user.email.slice(0, 2) : "JD");
         setUserData({
           email: user.email || "",
           userName: userName,
@@ -83,7 +81,7 @@ export function AppHeader({ title }: AppHeaderProps) {
 
   return (
     <header className="sticky top-0 z-10 w-full bg-background/95 shadow backdrop-blur supports-[backdrop-filter]:bg-background/60 dark:shadow-secondary">
-      <div className="mx-4 sm:mx-8 flex h-14 items-center">
+      <div className="mx-4 flex h-14 items-center sm:mx-8">
         <div className="flex items-center space-x-4 lg:space-x-0">
           <SheetMenu />
           <h1 className="font-bold">{title}</h1>
@@ -104,8 +102,11 @@ export function AppHeader({ title }: AppHeaderProps) {
                             className="relative h-10 w-10 rounded-full"
                           >
                             <Avatar className="h-8 w-8">
-                              <AvatarImage src={userData.avatar} alt="User avatar" />
-                              <AvatarFallback className="uppercase bg-transparent">
+                              <AvatarImage
+                                src={userData.avatar}
+                                alt="User avatar"
+                              />
+                              <AvatarFallback className="bg-transparent uppercase">
                                 {userData.userName?.charAt(0)}
                                 {userData.userName?.charAt(1)}
                               </AvatarFallback>
@@ -134,9 +135,12 @@ export function AppHeader({ title }: AppHeaderProps) {
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
                       <DropdownMenuItem asChild>
-                        <Link href={`/${locale}`} className="flex items-center justify-between w-full hover:cursor-pointer">
+                        <Link
+                          href={`/${locale}`}
+                          className="flex w-full items-center justify-between hover:cursor-pointer"
+                        >
                           <span>Home</span>
-                          <House className="w-4 h-4 ml-2 text-muted-foreground" />
+                          <House className="ml-2 h-4 w-4 text-muted-foreground" />
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem className="p-2 focus:bg-transparent">
@@ -144,8 +148,8 @@ export function AppHeader({ title }: AppHeaderProps) {
                           href={`/${locale}/dashboard`}
                           className="flex w-full items-center justify-center rounded-md bg-destructive px-3 py-2 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/10"
                           onClick={(e) => {
-                            e.preventDefault()
-                            logout()
+                            e.preventDefault();
+                            logout();
                           }}
                         >
                           Log Out
@@ -156,7 +160,7 @@ export function AppHeader({ title }: AppHeaderProps) {
                 </DropdownMenu>
               </div>
             </div>
-          ) :
+          ) : (
             <DropdownMenu>
               <TooltipProvider disableHoverableContent>
                 <Tooltip delayDuration={100}>
@@ -182,21 +186,27 @@ export function AppHeader({ title }: AppHeaderProps) {
               <DropdownMenuContent align="end" forceMount>
                 <DropdownMenuGroup>
                   <DropdownMenuItem asChild>
-                    <Link href={`/${locale}/signin`} className="flex items-center justify-between w-full hover:cursor-pointer">
+                    <Link
+                      href={`/${locale}/signin`}
+                      className="flex w-full items-center justify-between hover:cursor-pointer"
+                    >
                       <span>Sign In</span>
-                      <LogIn className="w-4 h-4 ml-2 text-muted-foreground" />
+                      <LogIn className="ml-2 h-4 w-4 text-muted-foreground" />
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href={`/${locale}`} className="flex items-center justify-between w-full hover:cursor-pointer">
+                    <Link
+                      href={`/${locale}`}
+                      className="flex w-full items-center justify-between hover:cursor-pointer"
+                    >
                       <span>Home</span>
-                      <House className="w-4 h-4 ml-2 text-muted-foreground" />
+                      <House className="ml-2 h-4 w-4 text-muted-foreground" />
                     </Link>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-          }
+          )}
         </div>
       </div>
     </header>

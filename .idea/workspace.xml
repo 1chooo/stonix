@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="35617a5e-bfb7-4493-ab83-ecf5d2dd8b3b" name="Changes" comment="feat: use prettier">
+      <change afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.husky/pre-commit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.prettierrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODOs.md" beforeDir="false" afterPath="$PROJECT_DIR$/TODOs.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messages/tw.json" beforeDir="false" afterPath="$PROJECT_DIR$/messages/tw.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(app)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(app)/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(app)/categories/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(app)/categories/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(app)/dashboard/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(app)/dashboard/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(app)/investments/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(app)/investments/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(app)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(app)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(app)/posts/new/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(app)/posts/new/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(app)/posts/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(app)/posts/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(app)/users/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(app)/users/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(auth)/forgot-password/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(auth)/forgot-password/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(auth)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(auth)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(auth)/signin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(auth)/signin/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(auth)/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(auth)/signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(example)/collapes/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(example)/collapes/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(example)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(example)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(experiment)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(experiment)/home/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(experiment)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(experiment)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(home)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(home)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(home)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(home)/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(home)/pricing/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(home)/pricing/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(home)/tools/compound-interest-calculator/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(home)/tools/compound-interest-calculator/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/(home)/tools/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/(home)/tools/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/[...rest]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/[...rest]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/[locale]/not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/[locale]/not-found.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/not-found.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/not-found.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin-panel/collapse-menu-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin-panel/collapse-menu-button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin-panel/menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin-panel/menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin-panel/sheet-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin-panel/sheet-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin-panel/sidebar-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin-panel/sidebar-toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin-panel/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin-panel/sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/admin-panel/user-nav.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/admin-panel/user-nav.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart/activity-heatmap.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart/activity-heatmap.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart/network-line-chart-v0.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart/network-line-chart-v0.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart/network-line-chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart/network-line-chart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart/network-pie-chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart/network-pie-chart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/chart/pie-chart-interactive.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/chart/pie-chart-interactive.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/collapes/app-sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collapes/app-sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/collapes/nav-main.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collapes/nav-main.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/collapes/nav-projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collapes/nav-projects.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/collapes/nav-user.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collapes/nav-user.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/collapes/team-switcher.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/collapes/team-switcher.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/gradient.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/gradient.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/language-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/language-toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/app-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/app-header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/auth-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/auth-header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/collapse-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/collapse-header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/home-header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/home-header.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/login-button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/login-button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/section/get-started.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/section/get-started.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/section/hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/section/hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/section/open-source-badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/section/open-source-badge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/theme/mode-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/theme/mode-toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/theme/theme-toggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/theme/theme-toggle.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/alert.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/alert.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/avatar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/badge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/breadcrumb.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/breadcrumb.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/chart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/chart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/checkbox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/collapsible.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/collapsible.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/dropdown-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/dropdown-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/label.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/label.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/navigation-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/navigation-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/popover.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/popover.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/scroll-area.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/scroll-area.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/separator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/separator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/sheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/sheet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/skeleton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/switch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/table.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/text-area.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/text-area.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/toast.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/toaster.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/toaster.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ui/tooltip.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ui/tooltip.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/web-vitals/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/web-vitals/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/web-vitals/web-vital-reports.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/web-vitals/web-vital-reports.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/context/auth-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/context/auth-context.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase/auth/email-password-login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/auth/email-password-login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase/auth/email-password-registration.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/auth/email-password-registration.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase/auth/email-verification-link.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/auth/email-verification-link.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase/auth/github-login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/auth/github-login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase/auth/google-login.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/auth/google-login.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/firebase/auth/logout.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/firebase/auth/logout.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-mobile.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-mobile.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-sidebar.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-sidebar.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-store.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-store.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/hooks/use-toast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/hooks/use-toast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/i18n/routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/i18n/routing.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/activity-heatmap.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/activity-heatmap.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/menu-list.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/menu-list.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/providers.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/providers.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lib/utils.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib/utils.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/preview.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/preview.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {}
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/TakumiBC/stonix&quot;,
+    &quot;accountId&quot;: &quot;9d58ad6c-96b5-43b5-95e9-d2ce42f50c76&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2ti3WazUUa1r2ajXw2GhqGOjOgV" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "patch-2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "pnpm",
+    "ts.external.directory.path": "/Users/takumibc/WebstormProjects/stonix/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="35617a5e-bfb7-4493-ab83-ecf5d2dd8b3b" name="Changes" comment="" />
+      <created>1740821099714</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1740821099714</updated>
+      <workItem from="1740821100909" duration="1326000" />
+      <workItem from="1740823315825" duration="740000" />
+    </task>
+    <task id="LOCAL-00001" summary="fix: correct locale name">
+      <option name="closed" value="true" />
+      <created>1740821230837</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1740821230837</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix: correct locale name">
+      <option name="closed" value="true" />
+      <created>1740822205546</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1740822205546</updated>
+    </task>
+    <task id="LOCAL-00003" summary="refactor: remove code copied from LinkScape">
+      <option name="closed" value="true" />
+      <created>1740822430504</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1740822430504</updated>
+    </task>
+    <task id="LOCAL-00004" summary="refactor: remove code copied from LinkScape">
+      <option name="closed" value="true" />
+      <created>1740822587771</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740822587771</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix: remove unused import">
+      <option name="closed" value="true" />
+      <created>1740823401721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740823401721</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix: correct locale name in" />
+    <MESSAGE value="fix: correct locale name" />
+    <MESSAGE value="refactor: remove code copied from LinkScape" />
+    <MESSAGE value="fix: remove unused import" />
+    <MESSAGE value="feat: use prettier" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: use prettier" />
+  </component>
+</project>
