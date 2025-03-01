@@ -12,7 +12,7 @@ export default function Hero() {
         <h1 className="text-center text-4xl font-bold sm:text-8xl">
           {t("title")}{" "} <AuroraText>{t("project")}</AuroraText>
         </h1>
-        <TypingAnimation className="px-4 py-6 text-center text-lg md:text-xl text-gh-text-secondary">{t("subtitle")}</TypingAnimation>
+        <TypingAnimation className="px-4 py-6 text-center text-lg md:text-xl text-gh-text-secondary font-normal" duration={50}>{t("subtitle")}</TypingAnimation>
       </div>
       <p className="leading-6 text-muted-foreground text-center max-w-2xl mx-auto text-lg md:text-xl">
         {t("description")}
