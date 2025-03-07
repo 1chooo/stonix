@@ -3,10 +3,16 @@
 import Link from "next/link";
 import { ContentLayout } from "@/components/admin-panel/content-layout";
 import { useLocale } from "next-intl";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { NetworkPieChart } from "@/components/chart/network-pie-chart"
-import { NetworkLineChart } from "@/components/chart/network-line-chart"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { NetworkPieChart } from "@/components/chart/network-pie-chart";
+import { NetworkLineChart } from "@/components/chart/network-line-chart";
 import { useAuthContext } from "@/context/auth-context";
 
 export default function DashboardPage() {
@@ -15,17 +21,17 @@ export default function DashboardPage() {
 
   return (
     <ContentLayout title="Dashboard">
-      {user ? (
-        null
-      ) :
-        <div className="text-sm text-center justify-center my-4">
-          <Link href={`/${locale}/signin`} className="text-sm underline dark:text-sky-400 text-sky-500 font-semibold">
+      {user ? null : (
+        <div className="my-4 justify-center text-center text-sm">
+          <Link
+            href={`/${locale}/signin`}
+            className="text-sm font-semibold text-sky-500 underline dark:text-sky-400"
+          >
             Sign in
-          </Link>{' '}
+          </Link>{" "}
           to save focus history and tasks.
         </div>
-      }
-
+      )}
 
       {/* Main Content */}
       <div className="flex-1 space-y-6 p-6">
@@ -67,7 +73,9 @@ export default function DashboardPage() {
             </CardHeader>
             <CardContent>
               <div className="text-3xl font-bold">$2,808,491.15</div>
-              <div className="text-sm text-green-500">+$1,553.43 (+0.9%) vs last month</div>
+              <div className="text-sm text-green-500">
+                +$1,553.43 (+0.9%) vs last month
+              </div>
               <NetworkLineChart />
             </CardContent>
           </Card>
@@ -82,7 +90,9 @@ export default function DashboardPage() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">$8,411.11</div>
-              <div className="text-sm text-green-500">+$871.22 (+2.8%) vs last month</div>
+              <div className="text-sm text-green-500">
+                +$871.22 (+2.8%) vs last month
+              </div>
             </CardContent>
           </Card>
 
@@ -93,7 +103,9 @@ export default function DashboardPage() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">$6,112.24</div>
-              <div className="text-sm text-red-500">+$1,704.56 (+1.9%) vs last month</div>
+              <div className="text-sm text-red-500">
+                +$1,704.56 (+1.9%) vs last month
+              </div>
               <div className="mt-4 h-[100px] w-full" />
             </CardContent>
           </Card>
@@ -119,7 +131,9 @@ export default function DashboardPage() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">$1,120,448.79</div>
-              <div className="text-sm text-green-500">+$3,286.91 (+1.8%) vs last month</div>
+              <div className="text-sm text-green-500">
+                +$3,286.91 (+1.8%) vs last month
+              </div>
               <div className="mt-4 h-[100px] w-full" />
             </CardContent>
           </Card>
@@ -135,28 +149,40 @@ export default function DashboardPage() {
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="h-8 w-8 rounded-full bg-blue-100 text-center leading-8">I</div>
+                    <div className="h-8 w-8 rounded-full bg-blue-100 text-center leading-8">
+                      I
+                    </div>
                     <div>
                       <div className="font-medium">Interest Payment</div>
-                      <div className="text-sm text-muted-foreground">Interest</div>
+                      <div className="text-sm text-muted-foreground">
+                        Interest
+                      </div>
                     </div>
                   </div>
                   <div className="text-right">
                     <div className="text-green-500">+$1.42</div>
-                    <div className="text-sm text-muted-foreground">FEB 28, 2024</div>
+                    <div className="text-sm text-muted-foreground">
+                      FEB 28, 2024
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="h-8 w-8 rounded-full bg-purple-100 text-center leading-8">R</div>
+                    <div className="h-8 w-8 rounded-full bg-purple-100 text-center leading-8">
+                      R
+                    </div>
                     <div>
                       <div className="font-medium">Remote Salary</div>
-                      <div className="text-sm text-muted-foreground">Payroll</div>
+                      <div className="text-sm text-muted-foreground">
+                        Payroll
+                      </div>
                     </div>
                   </div>
                   <div className="text-right">
                     <div className="text-green-500">+$6,000</div>
-                    <div className="text-sm text-muted-foreground">FEB 28, 2024</div>
+                    <div className="text-sm text-muted-foreground">
+                      FEB 28, 2024
+                    </div>
                   </div>
                 </div>
               </div>

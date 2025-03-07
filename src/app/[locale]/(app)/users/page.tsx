@@ -25,12 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from "@/components/ui/card"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { doc, getDoc, setDoc } from "firebase/firestore";
 import { auth, db } from "@/firebase/config";
@@ -67,7 +62,8 @@ export default function UsersPage() {
       const userDocRef = doc(db, "users", user.uid);
       const userDoc = await getDoc(userDocRef);
 
-      const defaultUserName = user.displayName || (user.email ? user.email.slice(0, 2) : "JD");
+      const defaultUserName =
+        user.displayName || (user.email ? user.email.slice(0, 2) : "JD");
 
       if (userDoc.exists()) {
         const userData = userDoc.data();
@@ -122,7 +118,8 @@ export default function UsersPage() {
       console.error("Failed to Update", error);
       toast({
         title: "Failed to Update",
-        description: "An error occurred while updating your account information.",
+        description:
+          "An error occurred while updating your account information.",
         variant: "destructive",
       });
     }
@@ -147,14 +144,18 @@ export default function UsersPage() {
                     <FormItem>
                       <FormControl>
                         <div className="flex items-center space-x-4">
-                          <Avatar className="w-20 h-20">
+                          <Avatar className="h-20 w-20">
                             <AvatarImage src={field.value} alt="Avatar" />
                             <AvatarFallback className="uppercase">
                               {form.getValues("userName").charAt(0)}
                               {form.getValues("userName").charAt(1)}
                             </AvatarFallback>
                           </Avatar>
-                          <Input {...field} type="url" placeholder="輸入頭像 URL" />
+                          <Input
+                            {...field}
+                            type="url"
+                            placeholder="輸入頭像 URL"
+                          />
                         </div>
                       </FormControl>
                       <FormDescription>
@@ -178,7 +179,12 @@ export default function UsersPage() {
                   render={({ field }) => (
                     <FormItem>
                       <FormControl>
-                        <Input {...field} type="email" placeholder="your@email.com" disabled />
+                        <Input
+                          {...field}
+                          type="email"
+                          placeholder="your@email.com"
+                          disabled
+                        />
                       </FormControl>
                       <FormDescription>
                         This is your email address associated with your account.
@@ -204,7 +210,8 @@ export default function UsersPage() {
                         <Input {...field} placeholder="Your Name" />
                       </FormControl>
                       <FormDescription>
-                        This is your public username that will be displayed in the app.
+                        This is your public username that will be displayed in
+                        the app.
                       </FormDescription>
                       <FormMessage />
                     </FormItem>
@@ -222,7 +229,11 @@ export default function UsersPage() {
                   name="role"
                   render={({ field }) => (
                     <FormItem>
-                      <Select onValueChange={field.onChange} value={field.value} disabled>
+                      <Select
+                        onValueChange={field.onChange}
+                        value={field.value}
+                        disabled
+                      >
                         <FormControl>
                           <SelectTrigger>
                             <SelectValue placeholder="選擇您的角色" />
@@ -249,14 +260,17 @@ export default function UsersPage() {
             </div>
           </form>
         </Form>
-      ) :
-        <div className="text-sm text-center justify-center my-4">
-          <Link href={`/${locale}/signin`} className="text-sm underline dark:text-sky-400 text-sky-500 font-semibold">
+      ) : (
+        <div className="my-4 justify-center text-center text-sm">
+          <Link
+            href={`/${locale}/signin`}
+            className="text-sm font-semibold text-sky-500 underline dark:text-sky-400"
+          >
             Sign in
-          </Link>{' '}
+          </Link>{" "}
           to manage your account.
         </div>
-      }
-    </ContentLayout >
+      )}
+    </ContentLayout>
   );
 }

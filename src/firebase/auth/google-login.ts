@@ -3,7 +3,9 @@ import { auth } from "@/firebase/config";
 import { GoogleAuthProvider, signInWithPopup, signOut } from "firebase/auth";
 
 export const useGoogleLogin = () => {
-  const [errorGoogleLogin, setErrorGoogleLogin] = useState<boolean | null>(null);
+  const [errorGoogleLogin, setErrorGoogleLogin] = useState<boolean | null>(
+    null,
+  );
   const [isPendingGoogleLogin, setIsPendingGoogleLogin] = useState(false);
   const provider = new GoogleAuthProvider();
 

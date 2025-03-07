@@ -1,23 +1,24 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
-import { useLocale } from "next-intl"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { useLocale } from "next-intl";
 
 export default function Login() {
   const locale = useLocale();
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 -mt-16">
+    <div className="-mt-16 flex min-h-screen items-center justify-center p-4">
       <div className="w-full max-w-md space-y-8">
-        <Card className="shadow-xl bg-slate-50 dark:bg-slate-900">
-          <CardContent className="pt-8 px-6 pb-6 space-y-6">
-            <h1 className="text-3xl font-semibold mb-8 text-center">
+        <Card className="bg-slate-50 shadow-xl dark:bg-slate-900">
+          <CardContent className="space-y-6 px-6 pb-6 pt-8">
+            <h1 className="mb-8 text-center text-3xl font-semibold">
               Forgot your password?
             </h1>
 
             <p className="text-center text-gray-400">
-              To reset your password, please enter the email address of your Stonix account.
+              To reset your password, please enter the email address of your
+              Stonix account.
             </p>
 
             <div className="space-y-4">
@@ -34,12 +35,15 @@ export default function Login() {
               </div>
             </div>
 
-            <Button className="w-full h-12 font-medium">
+            <Button className="h-12 w-full font-medium">
               Reset my password
             </Button>
 
             <p className="text-center text-gray-400">
-              <Link href={`/${locale}/signin`} className="transition-colors underline">
+              <Link
+                href={`/${locale}/signin`}
+                className="underline transition-colors"
+              >
                 Go to sign in
               </Link>
             </p>
@@ -47,5 +51,5 @@ export default function Login() {
         </Card>
       </div>
     </div>
-  )
+  );
 }

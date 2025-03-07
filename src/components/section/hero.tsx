@@ -1,22 +1,26 @@
-import { useTranslations } from "next-intl"
+"use client";
 
-import { AuroraText } from "@/components/magicui/aurora-text";
-import { TypingAnimation } from "@/components/magicui/typing-animation";
+import { useTranslations } from "next-intl";
 
 export default function Hero() {
-  const t = useTranslations("HomePage")
+  const t = useTranslations("HomePage");
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-col items-center justify-center w-full h-full z-3">
+      <div className="z-3 flex h-full w-full flex-col items-center justify-center">
         <h1 className="text-center text-4xl font-bold sm:text-8xl">
-          {t("title")}{" "} <AuroraText>{t("project")}</AuroraText>
+          {t("title")}{" "}
+          <span className="block bg-gradient-to-r from-blue-500 to-purple-700 bg-clip-text text-6xl text-transparent sm:inline-block sm:text-8xl">
+            {t("project")}
+          </span>
         </h1>
-        <TypingAnimation className="px-4 py-6 text-center text-lg md:text-xl text-gh-text-secondary font-normal" duration={50}>{t("subtitle")}</TypingAnimation>
+        <h2 className="text-gh-text-secondary px-4 py-6 text-center text-lg md:text-xl">
+          {t("subtitle")}
+        </h2>
       </div>
-      <p className="leading-6 text-muted-foreground text-center max-w-2xl mx-auto text-lg md:text-xl">
+      <p className="mx-auto max-w-2xl text-center text-lg leading-6 text-muted-foreground md:text-xl">
         {t("description")}
       </p>
     </div>
-  )
+  );
 }

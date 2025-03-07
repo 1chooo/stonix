@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { cva } from "class-variance-authority"
-import Link from "next/link"
-import React from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Menu } from "lucide-react"
+import { cva } from "class-variance-authority";
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-  TooltipProvider
+  TooltipProvider,
 } from "@/components/ui/tooltip";
 
 import {
@@ -19,10 +19,10 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { LanguageToggle } from "@/components/language-toggle"
-import { ThemeToggle } from "@/components/theme/theme-toggle"
+import { LanguageToggle } from "@/components/language-toggle";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { useLocale } from "next-intl";
 
 const buttonVariants = cva(
@@ -35,9 +35,12 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-input bg-background hover:bg-accent hover:text-accent-foreground border",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border-input bg-background hover:bg-accent hover:text-accent-foreground border",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
@@ -53,15 +56,15 @@ const buttonVariants = cva(
       size: "default",
     },
   },
-)
+);
 
 export default function HomeHeader() {
   const locale = useLocale();
 
   return (
-    <header className="fixed inset-x-0 top-0 z-40 shadow-sm saturate-100 backdrop-blur-[10px] border-b border-gray-200 dark:border-gray-800">
+    <header className="fixed inset-x-0 top-0 z-40 border-b border-gray-200 shadow-sm saturate-100 backdrop-blur-[10px] dark:border-gray-800">
       <div className="mx-auto flex h-[60px] items-center px-4 sm:px-8">
-        <div className="lg:hidden mr-2">
+        <div className="mr-2 lg:hidden">
           <DropdownMenu>
             <TooltipProvider disableHoverableContent>
               <Tooltip delayDuration={100}>
@@ -84,7 +87,10 @@ export default function HomeHeader() {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="hover:cursor-pointer" asChild>
-                  <Link href={`/${locale}/pricing`} className="flex items-center">
+                  <Link
+                    href={`/${locale}/pricing`}
+                    className="flex items-center"
+                  >
                     Pricing
                   </Link>
                 </DropdownMenuItem>
@@ -122,29 +128,33 @@ export default function HomeHeader() {
               height={40}
               draggable={false}
             />
-            <h1 className="hidden text-2xl font-bold sm:block">
-              Stonix
-            </h1>
+            <h1 className="hidden text-2xl font-bold sm:block">Stonix</h1>
           </Link>
         </div>
-        <nav className="flex-grow flex justify-center">
-          <div className="gap-5 text-lg font-medium hidden lg:flex">
+        <nav className="flex flex-grow justify-center">
+          <div className="hidden gap-5 text-lg font-medium lg:flex">
             <Link
-              className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10"
+              className="rounded-xl px-3 py-2 transition-colors hover:bg-primary/10"
               href={`/${locale}/tools`}
               aria-label="Guestbook"
             >
               Tools
             </Link>
-            <Link href={`/${locale}/pricing`} className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10">
+            <Link
+              href={`/${locale}/pricing`}
+              className="rounded-xl px-3 py-2 transition-colors hover:bg-primary/10"
+            >
               Pricing
             </Link>
-            <Link href={`/${locale}/#`} className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10">
+            <Link
+              href={`/${locale}/#`}
+              className="rounded-xl px-3 py-2 transition-colors hover:bg-primary/10"
+            >
               Blog
             </Link>
           </div>
         </nav>
-        <div className="flex-shrink-0 flex items-center justify-end space-x-2 lg:w-[300px]">
+        <div className="flex flex-shrink-0 items-center justify-end space-x-2 lg:w-[300px]">
           <LanguageToggle />
           <ThemeToggle />
           <Link href={`/${locale}/dashboard`} className={buttonVariants()}>
@@ -154,4 +164,4 @@ export default function HomeHeader() {
       </div>
     </header>
   );
-};
+}

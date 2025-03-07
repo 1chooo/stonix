@@ -1,20 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import {
-  Settings,
-  LogOut,
-  User,
-  House,
-  Search,
-} from "lucide-react";
+import { Settings, LogOut, User, House, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-  TooltipProvider
+  TooltipProvider,
 } from "@/components/ui/tooltip";
 import {
   DropdownMenu,
@@ -23,7 +17,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useLocale } from "next-intl";
 
@@ -64,13 +58,13 @@ export function UserNav() {
         <DropdownMenuGroup>
           <DropdownMenuItem className="hover:cursor-pointer" asChild>
             <Link href="/#" className="flex items-center">
-              <User className="w-4 h-4 mr-3 text-muted-foreground" />
+              <User className="mr-3 h-4 w-4 text-muted-foreground" />
               Account
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem className="hover:cursor-pointer" asChild>
             <Link href="/#" className="flex items-center">
-              <Settings className="w-4 h-4 mr-3 text-muted-foreground" />
+              <Settings className="mr-3 h-4 w-4 text-muted-foreground" />
               Settings
             </Link>
           </DropdownMenuItem>
@@ -78,7 +72,7 @@ export function UserNav() {
         <DropdownMenuSeparator />
         <DropdownMenuItem className="hover:cursor-pointer" asChild>
           <Link href="/#" className="flex items-center">
-            <Search className="w-4 h-4 mr-3 text-muted-foreground" />
+            <Search className="mr-3 h-4 w-4 text-muted-foreground" />
             Command Menu
             <kbd className="pointer-events-none absolute right-2 hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-xs text-muted-foreground opacity-100 sm:flex">
               <span className="text-xs">⌘</span>K
@@ -90,12 +84,12 @@ export function UserNav() {
         <DropdownMenuGroup>
           <DropdownMenuItem className="hover:cursor-pointer" asChild>
             <Link href={`/${locale}`}>
-              <House className="w-4 h-4 mr-3 text-muted-foreground" />
+              <House className="mr-3 h-4 w-4 text-muted-foreground" />
               Home
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem className="hover:cursor-pointer" onClick={() => { }}>
-            <LogOut className="w-4 h-4 mr-3 text-muted-foreground" />
+          <DropdownMenuItem className="hover:cursor-pointer" onClick={() => {}}>
+            <LogOut className="mr-3 h-4 w-4 text-muted-foreground" />
             Sign out
           </DropdownMenuItem>
         </DropdownMenuGroup>

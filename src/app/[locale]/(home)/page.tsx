@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 import Hero from "@/components/section/hero";
 import { Gradient } from "@/components/gradient";
@@ -12,10 +12,10 @@ export default function HomePage() {
     <>
       <Gradient />
       <Particles
-        className="absolute top-0 left-0 w-full h-full"
+        className="absolute left-0 top-0 h-full w-full"
         quantity={50}
       />
-      <main className='relative mx-auto mb-16 max-w-4xl px-8 pt-24'>
+      <main className="relative mx-auto mb-16 max-w-4xl px-8 pt-24">
         <OpenSourceBadge />
         <div className="mt-10 flex flex-col items-center justify-center">
           <Hero />
@@ -27,4 +27,4 @@ export default function HomePage() {
       </div>
     </>
   );
-};
+}
