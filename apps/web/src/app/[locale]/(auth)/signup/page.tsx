@@ -1,24 +1,31 @@
-"use client"
+"use client";
 
-import Link from "next/link"
-import { useLocale } from "next-intl"
-import { useRouter } from "next/navigation"
-import { useEffect } from "react"
+import Link from "next/link";
+import { useLocale } from "next-intl";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
-import * as z from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { useAuthContext } from "@/context/auth-context"
-import { useEmailPasswordLogin } from "@/firebase/auth/email-password-login"
-import { useEmailPasswordRegistration } from "@/firebase/auth/email-password-registration"
-import { useEmailVerification } from "@/firebase/auth/email-verification-link"
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { useAuthContext } from "@/context/auth-context";
+import { useEmailPasswordLogin } from "@/firebase/auth/email-password-login";
+import { useEmailPasswordRegistration } from "@/firebase/auth/email-password-registration";
+import { useEmailVerification } from "@/firebase/auth/email-verification-link";
 
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
 
-import { Shell } from "lucide-react"
+import { Shell } from "lucide-react";
 
 const FormSchemaEmailPassword = z.object({
   email: z
@@ -35,18 +42,25 @@ const FormSchemaEmailPassword = z.object({
     .min(8, {
       message: "Password must be at least 8 characters.",
     }),
-})
+});
 
 export default function SignUpPage() {
-  const { user } = useAuthContext()
-  const locale = useLocale()
-  const router = useRouter()
+  const { user } = useAuthContext();
+  const locale = useLocale();
+  const router = useRouter();
 
-  const { isPendingEmailPasswordLogin } = useEmailPasswordLogin()
-  const { emailPasswordRegistration, errorEmailPasswordRegistration, isPendingEmailPasswordRegistration } =
-    useEmailPasswordRegistration()
-  const { isEmailVerificationSent, isEmailVerificationPending, errorVerificationLink, sendEmailVerificationLink } =
-    useEmailVerification()
+  const { isPendingEmailPasswordLogin } = useEmailPasswordLogin();
+  const {
+    emailPasswordRegistration,
+    errorEmailPasswordRegistration,
+    isPendingEmailPasswordRegistration,
+  } = useEmailPasswordRegistration();
+  const {
+    isEmailVerificationSent,
+    isEmailVerificationPending,
+    errorVerificationLink,
+    sendEmailVerificationLink,
+  } = useEmailVerification();
 
   const formEmailPassword = useForm<z.infer<typeof FormSchemaEmailPassword>>({
     resolver: zodResolver(FormSchemaEmailPassword),
@@ -54,25 +68,27 @@ export default function SignUpPage() {
       email: "",
       password: "",
     },
-  })
+  });
 
   useEffect(() => {
     if (user && user.emailVerified) {
-      router.push(`/${locale}/dashboard`)
+      router.push(`/${locale}/dashboard`);
     }
-  }, [user, locale, router])
+  }, [user, locale, router]);
 
-  async function onSubmitEmailPasswordRegistration(data: z.infer<typeof FormSchemaEmailPassword>) {
-    await emailPasswordRegistration(data.email, data.password)
+  async function onSubmitEmailPasswordRegistration(
+    data: z.infer<typeof FormSchemaEmailPassword>,
+  ) {
+    await emailPasswordRegistration(data.email, data.password);
   }
 
   const handleSendVerificationEmail = async () => {
     try {
-      await sendEmailVerificationLink()
+      await sendEmailVerificationLink();
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-  }
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center p-4 -mt-20">
@@ -81,7 +97,11 @@ export default function SignUpPage() {
           <div className="w-full flex flex-col items-center gap-4">
             <h1 className="text-center text-xl font-bold">Connected !</h1>
             <p>
-              Hey <b className="italic underline underline-offset-4">{user.email}</b> 👋
+              Hey{" "}
+              <b className="italic underline underline-offset-4">
+                {user.email}
+              </b>{" "}
+              👋
             </p>
             {user.emailVerified ? (
               <p className="text-green-900 text-md font-semibold">
@@ -89,14 +109,20 @@ export default function SignUpPage() {
               </p>
             ) : (
               <>
-                <p className="text-red-600 text-md font-semibold">Your email is not verified.</p>
+                <p className="text-red-600 text-md font-semibold">
+                  Your email is not verified.
+                </p>
                 <Button
                   disabled={
-                    isPendingEmailPasswordLogin || isPendingEmailPasswordRegistration || isEmailVerificationPending
+                    isPendingEmailPasswordLogin ||
+                    isPendingEmailPasswordRegistration ||
+                    isEmailVerificationPending
                   }
                   onClick={handleSendVerificationEmail}
                 >
-                  {isEmailVerificationPending && <Shell className="mr-2 h-4 w-4 animate-spin" />}
+                  {isEmailVerificationPending && (
+                    <Shell className="mr-2 h-4 w-4 animate-spin" />
+                  )}
                   Send verification email
                 </Button>
               </>
@@ -106,7 +132,11 @@ export default function SignUpPage() {
                 The email was successfully sent, check your email box to confirm
               </p>
             )}
-            {errorVerificationLink && <p className="text-red-900 text-md font-semibold">{errorVerificationLink}</p>}
+            {errorVerificationLink && (
+              <p className="text-red-900 text-md font-semibold">
+                {errorVerificationLink}
+              </p>
+            )}
           </div>
         ) : (
           <Card className="shadow-xl bg-slate-50 dark:bg-slate-900">
@@ -122,7 +152,12 @@ export default function SignUpPage() {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="m@example.com" required {...field} value={field.value || ""} />
+                          <Input
+                            placeholder="m@example.com"
+                            required
+                            {...field}
+                            value={field.value || ""}
+                          />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -151,16 +186,24 @@ export default function SignUpPage() {
                     className="w-full h-12 font-medium"
                     type="button"
                     disabled={
-                      isPendingEmailPasswordLogin || isPendingEmailPasswordRegistration || isEmailVerificationPending
+                      isPendingEmailPasswordLogin ||
+                      isPendingEmailPasswordRegistration ||
+                      isEmailVerificationPending
                     }
-                    onClick={formEmailPassword.handleSubmit(onSubmitEmailPasswordRegistration)}
+                    onClick={formEmailPassword.handleSubmit(
+                      onSubmitEmailPasswordRegistration,
+                    )}
                   >
-                    {isPendingEmailPasswordRegistration && <Shell className="mr-2 h-4 w-4 animate-spin" />}
+                    {isPendingEmailPasswordRegistration && (
+                      <Shell className="mr-2 h-4 w-4 animate-spin" />
+                    )}
                     Sign Up
                   </Button>
                   {errorEmailPasswordRegistration && (
                     <span className="text-red-500 text-center text-sm block mt-4 font-semibold">
-                      {errorEmailPasswordRegistration === "auth/email-already-in-use" && "This user already exists "}
+                      {errorEmailPasswordRegistration ===
+                        "auth/email-already-in-use" &&
+                        "This user already exists "}
                     </span>
                   )}
                 </form>
@@ -168,7 +211,10 @@ export default function SignUpPage() {
 
               <p className="text-center text-gray-400">
                 Have an account?{" "}
-                <Link href={`/${locale}/signin`} className="transition-colors underline">
+                <Link
+                  href={`/${locale}/signin`}
+                  className="transition-colors underline"
+                >
                   Sign in now
                 </Link>
               </p>
@@ -177,6 +223,5 @@ export default function SignUpPage() {
         )}
       </div>
     </div>
-  )
+  );
 }
-

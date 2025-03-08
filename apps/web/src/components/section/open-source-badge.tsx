@@ -25,4 +25,4 @@ export default function OpenSourceBadge() {
       </div>
     </div>
   );
-};
+}

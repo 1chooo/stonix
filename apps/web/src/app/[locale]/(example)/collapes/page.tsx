@@ -1,4 +1,4 @@
-import { ContentLayout } from "@/components/layout/content-layout"
+import { ContentLayout } from "@/components/layout/content-layout";
 
 export default function Page() {
   return (
@@ -12,5 +12,5 @@ export default function Page() {
         <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
       </div>
     </ContentLayout>
-  )
+  );
 }

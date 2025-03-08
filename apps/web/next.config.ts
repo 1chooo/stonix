@@ -8,8 +8,8 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'avatar.vercel.sh',
+        protocol: "https",
+        hostname: "avatar.vercel.sh",
       },
     ],
   },

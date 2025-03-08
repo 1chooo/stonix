@@ -30,7 +30,6 @@
 
 ## ✨ Features
 
-
 ## 🌏 Contributing
 
 [PRs](https://github.com/1chooo/stonix/pulls) and [Issues](https://github.com/1chooo/stonix/issues) are welcome! 🫵🏻
@@ -63,7 +62,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## 📲 Contact Info
 
 > **Hugo ChunHo Lin**
-> 
+>
 > <aside>
 >   📩 E-mail: <a href="mailto:hugo970217@gmail.com">hugo970217@gmail.com</a>
 > <br>

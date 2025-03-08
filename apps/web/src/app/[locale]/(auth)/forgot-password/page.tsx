@@ -1,8 +1,8 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Card, CardContent } from "@/components/ui/card"
-import { useLocale } from "next-intl"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Card, CardContent } from "@/components/ui/card";
+import { useLocale } from "next-intl";
 
 export default function Login() {
   const locale = useLocale();
@@ -17,7 +17,8 @@ export default function Login() {
             </h1>
 
             <p className="text-center text-gray-400">
-              To reset your password, please enter the email address of your Stonix account.
+              To reset your password, please enter the email address of your
+              Stonix account.
             </p>
 
             <div className="space-y-4">
@@ -39,7 +40,10 @@ export default function Login() {
             </Button>
 
             <p className="text-center text-gray-400">
-              <Link href={`/${locale}/signin`} className="transition-colors underline">
+              <Link
+                href={`/${locale}/signin`}
+                className="transition-colors underline"
+              >
                 Go to sign in
               </Link>
             </p>
@@ -47,5 +51,5 @@ export default function Login() {
         </Card>
       </div>
     </div>
-  )
+  );
 }

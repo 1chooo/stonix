@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { cva } from "class-variance-authority"
-import Link from "next/link"
-import React from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Menu } from "lucide-react"
+import { cva } from "class-variance-authority";
+import Link from "next/link";
+import React from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-  TooltipProvider
+  TooltipProvider,
 } from "@/components/ui/tooltip";
 
 import {
@@ -19,10 +19,10 @@ import {
   DropdownMenuGroup,
   DropdownMenuItem,
   DropdownMenuSeparator,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { LanguageToggle } from "@/components/language-toggle"
-import { ThemeToggle } from "@/components/theme/theme-toggle"
+import { LanguageToggle } from "@/components/language-toggle";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { useLocale } from "next-intl";
 
 const buttonVariants = cva(
@@ -35,9 +35,12 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border-input bg-background hover:bg-accent hover:text-accent-foreground border",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border-input bg-background hover:bg-accent hover:text-accent-foreground border",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
@@ -53,7 +56,7 @@ const buttonVariants = cva(
       size: "default",
     },
   },
-)
+);
 
 export default function HomeHeader() {
   const locale = useLocale();
@@ -84,7 +87,10 @@ export default function HomeHeader() {
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem className="hover:cursor-pointer" asChild>
-                  <Link href={`/${locale}/pricing`} className="flex items-center">
+                  <Link
+                    href={`/${locale}/pricing`}
+                    className="flex items-center"
+                  >
                     Pricing
                   </Link>
                 </DropdownMenuItem>
@@ -122,9 +128,7 @@ export default function HomeHeader() {
               height={40}
               draggable={false}
             />
-            <h1 className="hidden text-2xl font-bold sm:block">
-              Stonix
-            </h1>
+            <h1 className="hidden text-2xl font-bold sm:block">Stonix</h1>
           </Link>
         </div>
         <nav className="flex-grow flex justify-center">
@@ -136,10 +140,16 @@ export default function HomeHeader() {
             >
               Tools
             </Link>
-            <Link href={`/${locale}/pricing`} className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10">
+            <Link
+              href={`/${locale}/pricing`}
+              className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10"
+            >
               Pricing
             </Link>
-            <Link href={`/${locale}/#`} className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10">
+            <Link
+              href={`/${locale}/#`}
+              className="px-3 py-2 rounded-xl transition-colors hover:bg-primary/10"
+            >
               Blog
             </Link>
           </div>
@@ -154,4 +164,4 @@ export default function HomeHeader() {
       </div>
     </header>
   );
-};
+}

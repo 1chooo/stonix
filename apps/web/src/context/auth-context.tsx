@@ -1,4 +1,10 @@
-import { createContext, useContext, useEffect, useState, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
 import firebaseApp from "@/firebase/config";
 import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 import { Shell } from "lucide-react";
@@ -12,7 +18,7 @@ interface AuthContextType {
 
 // Define default context value
 const defaultContextValue: AuthContextType = {
-  user: null
+  user: null,
 };
 
 // Create the context with the defined type
@@ -22,7 +28,9 @@ export const AuthContext = createContext<AuthContextType>(defaultContextValue);
 export const useAuthContext = (): AuthContextType => {
   const context = useContext(AuthContext);
   if (context === undefined) {
-    throw new Error('useAuthContext must be used within an AuthContextProvider');
+    throw new Error(
+      "useAuthContext must be used within an AuthContextProvider",
+    );
   }
   return context;
 };
@@ -32,9 +40,7 @@ interface AuthContextProviderProps {
   children: ReactNode;
 }
 
-export function AuthContextProvider(
-  { children }: AuthContextProviderProps
-) {
+export function AuthContextProvider({ children }: AuthContextProviderProps) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -63,4 +69,4 @@ export function AuthContextProvider(
       )}
     </AuthContext.Provider>
   );
-};
+}

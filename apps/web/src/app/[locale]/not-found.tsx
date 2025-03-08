@@ -1,6 +1,6 @@
-import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+import { useLocale } from "next-intl";
 
 /**
  * @see https://github.com/amannn/next-intl/tree/main/examples/example-app-router
@@ -19,9 +19,7 @@ export default function LocaleNotFoundPage() {
         </h1>
       </div>
       <Link href={`/${locale}`}>
-        <Button>
-          Home
-        </Button>
+        <Button>Home</Button>
       </Link>
     </div>
   );

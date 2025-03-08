@@ -1,20 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import {
-  Settings,
-  LogOut,
-  User,
-  House,
-  Search,
-} from "lucide-react";
+import { Settings, LogOut, User, House, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-  TooltipProvider
+  TooltipProvider,
 } from "@/components/ui/tooltip";
 import {
   DropdownMenu,
@@ -23,7 +17,7 @@ import {
   DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
-  DropdownMenuTrigger
+  DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useLocale } from "next-intl";
 
@@ -94,7 +88,7 @@ export function UserNav() {
               Home
             </Link>
           </DropdownMenuItem>
-          <DropdownMenuItem className="hover:cursor-pointer" onClick={() => { }}>
+          <DropdownMenuItem className="hover:cursor-pointer" onClick={() => {}}>
             <LogOut className="w-4 h-4 mr-3 text-muted-foreground" />
             Sign out
           </DropdownMenuItem>

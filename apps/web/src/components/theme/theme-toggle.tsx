@@ -20,4 +20,4 @@ export function ThemeToggle() {
       <Icon className="w-5" />
     </Button>
   );
-};
+}

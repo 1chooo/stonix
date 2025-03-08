@@ -6,7 +6,9 @@ export const useEmailVerification = () => {
   const [isEmailVerificationSent, setIsEmailVerificationSent] = useState(false);
   const [isEmailVerificationPending, setIsEmailVerificationPending] =
     useState(false);
-  const [errorVerificationLink, setErrorVerificationLink] = useState<string | null>(null);
+  const [errorVerificationLink, setErrorVerificationLink] = useState<
+    string | null
+  >(null);
 
   const sendEmailVerificationLink = async () => {
     setIsEmailVerificationPending(true);
@@ -20,10 +22,10 @@ export const useEmailVerification = () => {
       } else {
         setErrorVerificationLink("No user is currently logged in.");
       }
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
     } catch (error: any) {
       setErrorVerificationLink(
-        "Error sending verification email : " + error.message
+        "Error sending verification email : " + error.message,
       );
     } finally {
       setIsEmailVerificationPending(false);

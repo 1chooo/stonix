@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { TrendingUp } from "lucide-react"
-import { Label, Pie, PieChart } from "recharts"
+import * as React from "react";
+import { TrendingUp } from "lucide-react";
+import { Label, Pie, PieChart } from "recharts";
 
 import {
   Card,
@@ -11,20 +11,20 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
-} from "@/components/ui/chart"
+} from "@/components/ui/chart";
 const chartData = [
   { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
   { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
   { browser: "firefox", visitors: 287, fill: "var(--color-firefox)" },
   { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
   { browser: "other", visitors: 190, fill: "var(--color-other)" },
-]
+];
 
 const chartConfig = {
   visitors: {
@@ -50,12 +50,12 @@ const chartConfig = {
     label: "Other",
     color: "hsl(var(--chart-5))",
   },
-} satisfies ChartConfig
+} satisfies ChartConfig;
 
 export function NetworkPieChart() {
   const totalVisitors = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.visitors, 0)
-  }, [])
+    return chartData.reduce((acc, curr) => acc + curr.visitors, 0);
+  }, []);
 
   return (
     <Card className="flex flex-col">
@@ -105,7 +105,7 @@ export function NetworkPieChart() {
                           Visitors
                         </tspan>
                       </text>
-                    )
+                    );
                   }
                 }}
               />
@@ -122,5 +122,5 @@ export function NetworkPieChart() {
         </div>
       </CardFooter>
     </Card>
-  )
+  );
 }

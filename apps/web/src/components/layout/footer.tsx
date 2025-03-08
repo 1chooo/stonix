@@ -1,14 +1,12 @@
-import React from 'react'
-import { Github, Mail } from 'lucide-react'
-import Link from 'next/link'
+import React from "react";
+import { Github, Mail } from "lucide-react";
+import Link from "next/link";
 
-import Image from 'next/image'
+import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div
-      className="flex w-full flex-col items-center justify-between gap-10 border-t dark:border-[#ffffff20] py-20 lg:flex-row border-[#00000020]"
-    >
+    <div className="flex w-full flex-col items-center justify-between gap-10 border-t dark:border-[#ffffff20] py-20 lg:flex-row border-[#00000020]">
       <div className="flex flex-col items-center gap-4 lg:ml-32 lg:items-start">
         <Image
           className="flex items-center gap-2 text-xl font-bold"
@@ -26,17 +24,17 @@ const Footer = () => {
           <Link
             href="https://github.com/1chooo"
             className="cursor-pointer text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
-            target='_blank'
-            rel='noreferrer noopener'
-            aria-label='GitHub'
+            target="_blank"
+            rel="noreferrer noopener"
+            aria-label="GitHub"
           >
             <Github />
           </Link>
           <Link
             href="mailto:hugo970217@gmail.com"
             className="ml-1 cursor-pointer text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
-            target='_blank'
-            rel='noreferrer noopener'
+            target="_blank"
+            rel="noreferrer noopener"
             aria-label="Mail"
           >
             <Mail />
@@ -48,51 +46,68 @@ const Footer = () => {
           <div className="font-medium">COMMUNITY</div>
           <Link
             href="/#"
-            className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white">Blog</Link>
+            className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
+          >
+            Blog
+          </Link>
           <Link
             href="https://github.com/1chooo/stonix/issues"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
-            target='_blank'
-            rel='noreferrer noopener'
+            target="_blank"
+            rel="noreferrer noopener"
             aria-label="Feedback"
-          >Feedback</Link>
+          >
+            Feedback
+          </Link>
           <Link
             href="/#"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
-            target='_blank'
-            rel='noreferrer noopener'
+            target="_blank"
+            rel="noreferrer noopener"
             aria-label="Feedback"
-          >Docs</Link>
+          >
+            Docs
+          </Link>
         </div>
         <div className="flex flex-col gap-2">
           <div className="font-medium">PRODUCT</div>
           <Link
             href="/#get-started"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
-          >Features</Link>
+          >
+            Features
+          </Link>
           <Link
             href="/#"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
-          >Mechanism</Link>
+          >
+            Mechanism
+          </Link>
         </div>
         <div className="flex flex-col gap-2">
           <div className="font-medium">COMPANY</div>
           <Link
             href="/#"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
-          >Privacy</Link>
+          >
+            Privacy
+          </Link>
           <Link
             href="/#"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
-          >Terms</Link>
+          >
+            Terms
+          </Link>
           <Link
             href="https://github.com/1chooo/stonix/blob/main/LICENSE"
             className="text-sm text-[#00000070] dark:text-[#ffffff70] transition-all hover:text-black dark:hover:text-white"
-          >License</Link>
+          >
+            License
+          </Link>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

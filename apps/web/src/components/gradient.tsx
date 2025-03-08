@@ -15,7 +15,7 @@ export const Gradient = () => {
           ? theme === "dark"
             ? "via-[#613b95]"
             : "via-[#FF9900]"
-          : "opacity-0"
+          : "opacity-0",
       )}
     />
   );

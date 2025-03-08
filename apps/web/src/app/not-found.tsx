@@ -1,7 +1,7 @@
-'use client';
- 
-import Error from 'next/error';
- 
+"use client";
+
+import Error from "next/error";
+
 export default function GlobalNotFound() {
   return (
     <html lang="en">

@@ -2,20 +2,18 @@
 
 import Link from "next/link";
 import { useLocale } from "next-intl";
-import { Separator } from "@/components/ui/separator"
+import { Separator } from "@/components/ui/separator";
 import { Button } from "@/components/ui/button";
 
-import {
-  SidebarTrigger,
-} from "@/components/ui/sidebar"
-import { LanguageToggle } from "@/components/language-toggle"
-import { ThemeToggle } from "@/components/theme/theme-toggle"
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import { LanguageToggle } from "@/components/language-toggle";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-  TooltipProvider
+  TooltipProvider,
 } from "@/components/ui/tooltip";
 import {
   DropdownMenu,
@@ -25,14 +23,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 import { useAuthContext } from "@/context/auth-context";
 import { useLogout } from "@/firebase/auth/logout";
-import {
-  LogIn,
-  User,
-  House,
-} from "lucide-react";
+import { LogIn, User, House } from "lucide-react";
 
 interface AppHeaderProps {
   title: string;
@@ -98,7 +92,10 @@ export function CollapseHeader({ title }: AppHeaderProps) {
                     <DropdownMenuSeparator />
                     <DropdownMenuGroup>
                       <DropdownMenuItem asChild>
-                        <Link href={`/${locale}`} className="flex items-center justify-between w-full hover:cursor-pointer">
+                        <Link
+                          href={`/${locale}`}
+                          className="flex items-center justify-between w-full hover:cursor-pointer"
+                        >
                           <span>Home</span>
                           <House className="w-4 h-4 ml-2 text-muted-foreground" />
                         </Link>
@@ -108,8 +105,8 @@ export function CollapseHeader({ title }: AppHeaderProps) {
                           href={`/${locale}/dashboard`}
                           className="flex w-full items-center justify-center rounded-md bg-destructive px-3 py-2 text-sm font-medium hover:bg-primary/10 dark:hover:bg-primary/10"
                           onClick={(e) => {
-                            e.preventDefault()
-                            logout()
+                            e.preventDefault();
+                            logout();
                           }}
                         >
                           Log Out
@@ -120,7 +117,7 @@ export function CollapseHeader({ title }: AppHeaderProps) {
                 </DropdownMenu>
               </div>
             </div>
-          ) :
+          ) : (
             <DropdownMenu>
               <TooltipProvider disableHoverableContent>
                 <Tooltip delayDuration={100}>
@@ -146,13 +143,19 @@ export function CollapseHeader({ title }: AppHeaderProps) {
               <DropdownMenuContent align="end" forceMount>
                 <DropdownMenuGroup>
                   <DropdownMenuItem asChild>
-                    <Link href={`/${locale}/signin`} className="flex items-center justify-between w-full hover:cursor-pointer">
+                    <Link
+                      href={`/${locale}/signin`}
+                      className="flex items-center justify-between w-full hover:cursor-pointer"
+                    >
                       <span>Sign In</span>
                       <LogIn className="w-4 h-4 ml-2 text-muted-foreground" />
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href={`/${locale}`} className="flex items-center justify-between w-full hover:cursor-pointer">
+                    <Link
+                      href={`/${locale}`}
+                      className="flex items-center justify-between w-full hover:cursor-pointer"
+                    >
                       <span>Home</span>
                       <House className="w-4 h-4 ml-2 text-muted-foreground" />
                     </Link>
@@ -160,7 +163,7 @@ export function CollapseHeader({ title }: AppHeaderProps) {
                 </DropdownMenuGroup>
               </DropdownMenuContent>
             </DropdownMenu>
-          }
+          )}
         </div>
       </div>
     </header>
