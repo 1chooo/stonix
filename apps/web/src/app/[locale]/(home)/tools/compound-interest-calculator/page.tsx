@@ -24,7 +24,7 @@ import {
   ChartLegend,
   ChartLegendContent,
 } from "@/components/ui/chart"
-import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Alert, AlertDescription } from "@workspace/ui/components/alert"
 
 interface CalculationResult {
   year: number
