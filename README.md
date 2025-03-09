@@ -3,7 +3,7 @@
 <a name="readme-top"></a>
 
 <a href="https://stonix.1chooo.com">
-  <img alt="Stonix Home Page" src="./.github/cover.png">
+  <img alt="Stonix Home Page" src="./.github/cover.webp">
 </a>
 
 <p align="center">
