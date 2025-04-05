@@ -1,36 +1,41 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { motion, MotionProps } from "motion/react";
-import React from "react";
+import React, { memo } from "react";
 
-interface AuroraTextProps
-  extends Omit<React.HTMLAttributes<HTMLElement>, keyof MotionProps> {
-  className?: string;
+interface AuroraTextProps {
   children: React.ReactNode;
-  as?: React.ElementType;
+  className?: string;
+  colors?: string[];
+  speed?: number;
 }
 
-export function AuroraText({
-  className,
-  children,
-  as: Component = "span",
-  ...props
-}: AuroraTextProps) {
-  const MotionComponent = motion.create(Component);
+export const AuroraText = memo(
+  ({
+    children,
+    className = "",
+    colors = ["#38bdf8", "#7928CA", "#0070F3", "#38bdf8"],
+    speed = 1,
+  }: AuroraTextProps) => {
+    const gradientStyle = {
+      backgroundImage: `linear-gradient(135deg, ${colors.join(", ")}, ${colors[0]})`,
+      WebkitBackgroundClip: "text",
+      WebkitTextFillColor: "transparent",
+      animationDuration: `${10 / speed}s`,
+    };
 
-  return (
-    <MotionComponent
-      className={cn("relative inline-flex overflow-hidden", className)}
-      {...props}
-    >
-      {children}
-      <span className="pointer-events-none absolute inset-0 mix-blend-lighten dark:mix-blend-darken">
-        <span className="pointer-events-none absolute -top-1/2 h-[30vw] w-[30vw] animate-[aurora-border_6s_ease-in-out_infinite,aurora-1_12s_ease-in-out_infinite_alternate] bg-[hsl(var(--color-1))] mix-blend-overlay blur-[1rem]"></span>
-        <span className="pointer-events-none absolute right-0 top-0 h-[30vw] w-[30vw] animate-[aurora-border_6s_ease-in-out_infinite,aurora-2_12s_ease-in-out_infinite_alternate] bg-[hsl(var(--color-2))] mix-blend-overlay blur-[1rem]"></span>
-        <span className="pointer-events-none absolute bottom-0 left-0 h-[30vw] w-[30vw] animate-[aurora-border_6s_ease-in-out_infinite,aurora-3_12s_ease-in-out_infinite_alternate] bg-[hsl(var(--color-3))] mix-blend-overlay blur-[1rem]"></span>
-        <span className="pointer-events-none absolute -bottom-1/2 right-0 h-[30vw] w-[30vw] animate-[aurora-border_6s_ease-in-out_infinite,aurora-4_12s_ease-in-out_infinite_alternate] bg-[hsl(var(--color-4))] mix-blend-overlay blur-[1rem]"></span>
+    return (
+      <span className={`relative inline-block ${className}`}>
+        <span className="sr-only">{children}</span>
+        <span
+          className="relative animate-aurora bg-[length:200%_auto] bg-clip-text text-transparent"
+          style={gradientStyle}
+          aria-hidden="true"
+        >
+          {children}
+        </span>
       </span>
-    </MotionComponent>
-  );
-}
+    );
+  },
+);
+
+AuroraText.displayName = "AuroraText";
